@@ -17,11 +17,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content">
             <Button
-                android:id="@+id/btn_diagnostics"
+                android:id="@+id/btn_checkupForm"
                 android:background="@mipmap/ic_diagno"
                 android:layout_width="100dp"
                 android:layout_height="100dp" />
             <Button
+                android:id="@+id/btn_doctorCode"
                 android:layout_marginTop="20dp"
                 android:layout_width="100dp"
                 android:layout_height="100dp" />
@@ -38,11 +39,11 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp" />
             <Button
-                android:layout_marginTop="20dp"
-
-
+                android:id="@+id/btn_problems"
+                android:background="@mipmap/ic_profile"
                 android:layout_width="100dp"
                 android:layout_height="100dp" />
+
         </LinearLayout>
     </LinearLayout>
 

@@ -11,12 +11,39 @@ import android.widget.Button;
 public class HomeActivity extends AppCompatActivity {
 
     private Button profileButton;
+    private Button checkupFormButton ;
+    private Button doctorCodeButton ;
+    private Button medicalProblemsButton ;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         profileButton = findViewById(R.id.btn_profile);
+        medicalProblemsButton = findViewById(R.id.btn_problems);
+        checkupFormButton = findViewById(R.id.btn_checkupForm);
+        doctorCodeButton  = findViewById(R.id.btn_doctorCode);
         profileButton.setOnClickListener(new ProfileOnClickListener());
+        checkupFormButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), CheckupActivity.class);
+                startActivity(intent);
+            }
+        });
+        medicalProblemsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),MedicalProblemsActivity.class);
+                startActivity(intent);
+            }
+        });
+        doctorCodeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),DoctorCodeActivity.class);
+                startActivity(intent);
+            }
+        });
         scheduleNotifications();
     }
 
