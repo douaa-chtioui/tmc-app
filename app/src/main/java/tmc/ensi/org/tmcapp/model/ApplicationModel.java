@@ -17,7 +17,8 @@ import retrofit2.http.Query;
 public class ApplicationModel {
 
     private static final Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://192.168.0.10:8080/")
+//            .baseUrl("http://192.168.0.10:8080/")
+            .baseUrl("http://192.168.1.105:8080/")
             .addConverterFactory(JacksonConverterFactory.create())
             .build();
 
@@ -92,6 +93,7 @@ public class ApplicationModel {
 
         @GET("notifications")
         Call<UserNotification> fetchNotification(@Query("patientId") long patientId);
+
     }
 
 }

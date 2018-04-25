@@ -2,12 +2,20 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#2f333f</color>
-    <color name="green">#45bc62</color>
+    <color name="green">#1140FF</color>
+    <color name="ghaissa">#1140FF</color>
     <color name="orange">#eaad43</color>
+    <color name="azer">#a3e4d7</color>
     <color name="bluelight">#49acd5</color>
     <color name="red">#c62424</color>
     <color name="white">#fff</color>
     <color name="colorAccent">#201B1A</color>
     <color name="titleFont">#201B1A</color>
     <color name="colorAccent2">#FF4081</color>
+    <color name="colorChipBackground">#e0e0e0</color>
+    <color name="colorChipBackgroundClicked">#424242</color>
+    <color name="colorChipText">#424242</color>
+    <color name="colorChipTextClicked">#F5F5F5</color>
+    <color name="colorChipCloseInactive">#757575</color>
+    <color name="colorChipCloseClicked">#F5F5F5</color>
 </resources>

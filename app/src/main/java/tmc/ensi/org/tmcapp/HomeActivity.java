@@ -13,15 +13,19 @@ public class HomeActivity extends AppCompatActivity {
     private Button profileButton;
     private Button checkupFormButton ;
     private Button doctorCodeButton ;
-    private Button medicalProblemsButton ;
+    private Button chronicDiseaseButton ;
+    private Button nearByHospitalButton ;
+    private Button riskCalculatorButton ;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         profileButton = findViewById(R.id.btn_profile);
-        medicalProblemsButton = findViewById(R.id.btn_problems);
+        chronicDiseaseButton = findViewById(R.id.btn_chronicDisease);
         checkupFormButton = findViewById(R.id.btn_checkupForm);
         doctorCodeButton  = findViewById(R.id.btn_doctorCode);
+        nearByHospitalButton = findViewById(R.id.btn_nearByHospital);
+        riskCalculatorButton = findViewById(R.id.btn_riskCalculator);
         profileButton.setOnClickListener(new ProfileOnClickListener());
         checkupFormButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,10 +34,24 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        medicalProblemsButton.setOnClickListener(new View.OnClickListener() {
+        chronicDiseaseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),MedicalProblemsActivity.class);
+                Intent intent = new Intent(getApplicationContext(),ChronicDiseaseActivity.class);
+                startActivity(intent);
+            }
+        });
+        riskCalculatorButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),RiskCalculatorActivity.class);
+                startActivity(intent);
+            }
+        });
+        nearByHospitalButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),MapsActivity2.class);
                 startActivity(intent);
             }
         });

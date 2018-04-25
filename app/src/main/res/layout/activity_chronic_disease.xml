@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChronicDiseaseActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#e0f1ec"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp">
+
+        <TextView
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="#22b6ce"
+            android:background="#e0f1ec"
+            android:text="Précisez votre maladie "
+            android:textSize="30dp"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="8dp" />
+
+        <View
+        android:layout_width="match_parent"
+        android:layout_margin="4dp"
+        android:layout_height="50dp"
+        android:background="#e0f1ec"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="5dp"/>
+
+
+
+        <ListView
+            android:id="@+id/listOfDiseases"
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:background="#e0f1ec"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteY="10dp"
+            tools:layout_editor_absoluteX="8dp" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

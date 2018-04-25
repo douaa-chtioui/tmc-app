@@ -14,62 +14,35 @@ import tmc.ensi.org.tmcapp.R;
 
 public class MedicalProblemsAdapter extends BaseAdapter {
 
-    /**
-     * declaring variables for context, imagesId arrayList
-     * textViewlist
-     * */
+
     private Context context;
     private ArrayList<Integer> idImages;
     private ArrayList<String> textViewList;
 
-    /**
-     * {@link MedicalProblemsAdapter} constructor
-     * @param context
-     * @param listId
-     * @param textViewList
-     * */
+
     public MedicalProblemsAdapter(Context context, ArrayList<Integer> listId, ArrayList<String> textViewList) {
         this.context = context;
         this.idImages = listId;
         this.textViewList = textViewList;
     }
 
-    /**
-     * getCount override method
-     * @return textViewList.size
-     */
     @Override
     public int getCount() {
         return textViewList.size();
     }
 
-    /**
-     * override getItem method
-     * @param i
-     * @return Object
-     * */
     @Override
     public Object getItem(int i) {
         return textViewList.get(i);
     }
 
-    /**
-     * override getItemId method
-     * @param i
-     * @return long
-     * */
+
     @Override
     public long getItemId(int i) {
         return idImages.get(i);
     }
 
-    /**
-     * override getView method
-     * @param i
-     * @param view
-     * @param viewGroup
-     * @return view
-     * */
+
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
 

@@ -13,6 +13,7 @@ public class User {
     private int age;
     private Profile profile;
     private boolean hasDoctor;
+    private ChronicDisease chronicDisease;
 
     public User() {
     }
@@ -53,6 +54,8 @@ public class User {
         return profile;
     }
 
+    public ChronicDisease getChronicDisease() { return chronicDisease; }
+
     public void setProfile(Profile profile) {
         this.profile = profile;
     }
@@ -64,4 +67,7 @@ public class User {
     public void setHasDoctor(){
         this.hasDoctor = true;
     }
+
+    public void setChronicDisease(ChronicDisease chronicDisease) { this.chronicDisease = chronicDisease; }
+
 }
