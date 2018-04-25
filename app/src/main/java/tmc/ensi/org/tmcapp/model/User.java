@@ -12,6 +12,7 @@ public class User {
     private String lastname;
     private int age;
     private Profile profile;
+    private ChronicDisease chronicDisease ;
 
     public User() {
     }
@@ -52,9 +53,12 @@ public class User {
         return profile;
     }
 
+    public ChronicDisease getChronicDisease() { return chronicDisease; }
+
     public void setProfile(Profile profile) {
         this.profile = profile;
     }
 
-    ;
+    public void setChronicDisease(ChronicDisease chronicDisease) { this.chronicDisease = chronicDisease; }
+
 }

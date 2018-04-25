@@ -2,24 +2,24 @@ package tmc.ensi.org.tmcapp.model;
 
 public class Checkup {
     private String name;
-    private int phone ;
-    public Checkup(String name , int phone)
+    private String date ;
+    public Checkup(String name , String date)
     {this.name = name ;
-        this.phone = phone ; }
+        this.date = date ; }
 
     public String getName() {
         return name;
     }
 
-    public int getPhone() {
-        return phone;
+    public String getDate() {
+        return date;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setPhone(int phone) {
-        this.phone = phone;
+    public void setDate(String date) {
+        this.date = date;
     }
 }

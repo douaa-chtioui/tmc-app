@@ -32,7 +32,7 @@ public class CheckupAdapter extends ArrayAdapter<Checkup> {
         TextView tvphone = (TextView)convertView.findViewById(R.id.tv_phone);
         Checkup currentCheckup = getItem(position);
         tvName.setText(currentCheckup.getName());
-        tvphone.setText(String.valueOf(currentCheckup.getPhone()));
+        tvphone.setText(String.valueOf(currentCheckup.getDate()));
         return convertView ;
     }
 }

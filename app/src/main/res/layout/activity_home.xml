@@ -5,8 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="tmc.ensi.org.tmcapp.HomeActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <LinearLayout
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -14,22 +17,64 @@
             android:gravity="center"
             android:orientation="vertical"
             android:layout_weight="1"
+            android:layout_marginTop="80dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content">
             <Button
                 android:id="@+id/btn_checkupForm"
-                android:background="@mipmap/ic_diagno"
+                android:background="@drawable/question"
                 android:layout_width="100dp"
                 android:layout_height="100dp" />
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="70dp"
+                android:layout_alignParentTop ="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:layout_marginBottom="2dp"
+                android:textSize="20dp"
+                android:textColor="#22b6ce"
+                android:text="Consultez votre medecin"
+                />
             <Button
                 android:id="@+id/btn_doctorCode"
-                android:layout_marginTop="20dp"
+                android:background="@drawable/doctor1"
+                android:layout_marginTop="10dp"
                 android:layout_width="100dp"
                 android:layout_height="100dp" />
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="70dp"
+                android:layout_alignParentTop ="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:layout_marginBottom="2dp"
+                android:textSize="20dp"
+                android:textColor="#22b6ce"
+                android:text="Code de medecin"
+                />
+            <Button
+                android:id="@+id/btn_chronicDisease"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/heart"
+                android:layout_width="100dp"
+                android:layout_height="100dp" />
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="70dp"
+                android:layout_alignParentTop ="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:layout_marginBottom="2dp"
+                android:textSize="20dp"
+                android:textColor="#22b6ce"
+                android:text="Profil maladie chronique"
+                />
         </LinearLayout>
         <LinearLayout
             android:gravity="center"
             android:orientation="vertical"
+            android:layout_marginTop="80dp"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content">
@@ -38,21 +83,62 @@
                 android:background="@mipmap/ic_profile"
                 android:layout_width="100dp"
                 android:layout_height="100dp" />
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="70dp"
+                android:layout_alignParentTop ="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:layout_marginBottom="2dp"
+                android:textSize="20dp"
+                android:textColor="#22b6ce"
+                android:text="Profil"
+                />
+
+
             <Button
-                android:id="@+id/btn_problems"
-                android:background="@mipmap/ic_profile"
+                android:id="@+id/btn_riskCalculator"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:background="@drawable/heart"
                 android:layout_width="100dp"
                 android:layout_height="100dp" />
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="70dp"
+                android:layout_alignParentTop ="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:layout_marginBottom="2dp"
+                android:textSize="20dp"
+                android:textColor="#22b6ce"
+                android:text="calculez votre niveau de risque cardiovasculaire"
+                />
+
+
+
+            <Button
+                android:id="@+id/btn_nearByHospital"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/heart"
+                android:layout_width="100dp"
+                android:layout_height="100dp" />
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="70dp"
+                android:layout_alignParentTop ="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:layout_marginBottom="2dp"
+                android:textSize="20dp"
+                android:textColor="#22b6ce"
+                android:text="localisation des hopitaux"
+                />
+
 
         </LinearLayout>
     </LinearLayout>
 
-    <ImageView
-        android:layout_alignParentBottom="true"
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-
+    </ScrollView>
 
 </RelativeLayout>
