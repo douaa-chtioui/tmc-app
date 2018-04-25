@@ -1,7 +1,8 @@
 package tmc.ensi.org.tmcapp.model;
 
+import android.util.Log;
+
 import java.io.IOException;
-import java.io.UncheckedIOException;
 
 import retrofit2.Call;
 import retrofit2.Retrofit;
@@ -11,11 +12,12 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public class ApplicationModel {
 
     private static final Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://192.168.1.107:8080/")
+            .baseUrl("http://192.168.0.10:8080/")
             .addConverterFactory(JacksonConverterFactory.create())
             .build();
 
@@ -38,16 +40,16 @@ public class ApplicationModel {
     }
 
     public boolean createUser(User user) throws IOException {
-        return API.createUser(user).execute().isSuccessful();
+        return API.createPatient(user).execute().isSuccessful();
     }
 
     public User login(UserCredential credential) throws IOException {
         this.currentUser = API.login(credential).execute().body();
-        return currentUser;
+        return this.currentUser;
     }
 
     public boolean updateCurrentUserProfile(Profile profile) throws IOException {
-        boolean updated = API.updateProfile(currentUser.getIdentifier(), profile).execute().isSuccessful();
+        boolean updated = API.updatePatientProfile(currentUser.getIdentifier(), profile).execute().isSuccessful();
         if (updated) {
             this.currentUser.setProfile(profile);
         }
@@ -56,7 +58,19 @@ public class ApplicationModel {
 
     public UserNotification fetchNotification() {
         try {
-            return this.API.fetchNotification(this.currentUser.getIdentifier()).execute().body();
+            return API.fetchNotification(this.currentUser.getIdentifier()).execute().body();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public boolean assignDoctor(String doctorCode) {
+        try {
+            boolean successful = API.assignDoctor(this.currentUser.getIdentifier(), new DoctorAssignment(doctorCode)).execute().isSuccessful();
+            if (successful) {
+                this.currentUser.setHasDoctor();
+            }
+            return successful;
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -64,17 +78,20 @@ public class ApplicationModel {
 
     private interface Api {
 
-        @POST("users")
-        Call<Void> createUser(@Body User user);
+        @POST("patients")
+        Call<Void> createPatient(@Body User user);
 
         @POST("login")
         Call<User> login(@Body UserCredential credential);
 
-        @PUT("users/{userId}/profile")
-        Call<User> updateProfile(@Path("userId") long userId, @Body Profile profile);
+        @PUT("patients/{patientId}/profile")
+        Call<User> updatePatientProfile(@Path("patientId") long patientId, @Body Profile profile);
 
-        @GET("notifications/{userId}")
-        Call<UserNotification> fetchNotification(@Path("userId") long userId);
+        @PUT("patients/{patientId}/doctor")
+        Call<User> assignDoctor(@Path("patientId") long patientId, @Body DoctorAssignment doctorAssignment);
+
+        @GET("notifications")
+        Call<UserNotification> fetchNotification(@Query("patientId") long patientId);
     }
 
 }

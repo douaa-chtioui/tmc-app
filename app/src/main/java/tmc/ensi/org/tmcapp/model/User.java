@@ -12,6 +12,7 @@ public class User {
     private String lastname;
     private int age;
     private Profile profile;
+    private boolean hasDoctor;
 
     public User() {
     }
@@ -56,5 +57,11 @@ public class User {
         this.profile = profile;
     }
 
-    ;
+    public boolean getHasDoctor() {
+        return this.hasDoctor;
+    }
+
+    public void setHasDoctor(){
+        this.hasDoctor = true;
+    }
 }

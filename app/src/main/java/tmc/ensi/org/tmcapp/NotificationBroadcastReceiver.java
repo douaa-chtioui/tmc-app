@@ -16,19 +16,23 @@ public class NotificationBroadcastReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        try {
-            NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-            UserNotification userNotification = new FetchUserNotificationTask().execute().get();
-            Notification notification = new NotificationCompat.Builder(context)
-                    .setContentTitle("Tiltle")
-                    .setContentText(userNotification.getText())
-                    .setSmallIcon(android.R.drawable.stat_notify_chat)
-                    .setPriority(NotificationCompat.PRIORITY_DEFAULT).build();
-            notificationManager.notify(1, notification);
-        } catch (Exception e) {
-            Log.e("", "", e);
+        if (ApplicationModel.get().getCurrentUser() != null) {
+            try {
+                NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+                UserNotification userNotification = new FetchUserNotificationTask().execute().get();
+                if (userNotification != null) {
+                    Log.d("ntag", userNotification.getText());
+                    Notification notification = new NotificationCompat.Builder(context)
+                            .setContentTitle("Tiltle")
+                            .setContentText(userNotification.getText())
+                            .setSmallIcon(android.R.drawable.stat_notify_chat)
+                            .setPriority(NotificationCompat.PRIORITY_DEFAULT).build();
+                    notificationManager.notify(1, notification);
+                }
+            } catch (Exception e) {
+                Log.e("", "", e);
+            }
         }
-
     }
 
     private static class FetchUserNotificationTask extends AsyncTask<Void, Void, UserNotification> {
