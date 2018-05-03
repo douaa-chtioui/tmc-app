@@ -23,7 +23,9 @@ public class CheckupActivity extends AppCompatActivity {
         formList = (ListView) findViewById(R.id.formList);
         btnAdd = findViewById(R.id.btnAdd);
         ArrayList<Checkup> checkups = new ArrayList<>();
-        checkups.add(new Checkup("Douaa Chtioui","15/02/2018"));
+        checkups.add(new Checkup("Douaa Chtioui", "15/02/2018"));
+        checkups.add(new Checkup("Khadija Mzoughi", "8/02/2018"));
+        checkups.add(new Checkup("Khadija Mzoughi", "15/01/2018"));
         CheckupAdapter checkupAdapter = new CheckupAdapter(this, R.layout.item_checkup_form, checkups);
         formList.setAdapter(checkupAdapter);
         btnAdd.setOnClickListener(new View.OnClickListener() {

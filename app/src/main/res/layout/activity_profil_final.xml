@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4a4c4e"
+    tools:context=".ProfilFinalActivity">
+    <include layout="@layout/tool_bar_for_buttons"
+        android:id="@+id/mCustomToolbar"/>
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+     android:layout_marginTop="55dp"
+       >
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_marginTop="10dp"
+    android:layout_height="wrap_content"
+    >
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50dp"
+        android:layout_marginStart="40dp"
+        android:text="nom prenom"
+        android:textColor="#799dba"/>
+
+            <ImageView
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="4dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="10dp"
+                android:background="@drawable/modify"
+                />
+</LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="25dp"
+                        android:textColor="#FFF"
+                        android:text="Age: "/>
+                    <TextView
+                        android:id="@+id/tv_age"
+                        android:layout_width="wrap_content"
+                        android:textColor="#FFF"
+                        android:textSize="25dp"
+
+                        android:layout_marginStart="30dp"
+                        android:text="hello"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textColor="#FFF"
+                        android:textSize="20dp"
+                        android:layout_marginStart="20dp"
+                        android:text="ans"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/taille"/>
+                </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="30dp"
+    android:layout_marginTop="10dp"
+    android:orientation="horizontal">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:textColor="#FFF"
+        android:text="Taille : "/>
+        <TextView
+            android:id="@+id/tv_height"
+            android:layout_width="wrap_content"
+            android:textColor="#FFF"
+            android:textSize="25dp"
+
+            android:layout_marginStart="30dp"
+            android:text="hello"
+            android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:textColor="#FFF"
+        android:textSize="20dp"
+        android:layout_marginStart="20dp"
+        android:text="cm"
+        android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/taille"/>
+            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="25dp"
+                        android:textColor="#FFF"
+                        android:text="Poid : "/>
+                    <TextView
+                        android:id="@+id/tv_weight"
+                        android:layout_width="wrap_content"
+                        android:textColor="#FFF"
+                        android:textSize="25dp"
+                        android:layout_marginStart="30dp"
+                        android:text="hello"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textColor="#FFF"
+                        android:textSize="10dp"
+                        android:layout_marginStart="20dp"
+                        android:text="kg"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/weight"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tv_smoker"
+                        android:layout_width="wrap_content"
+                        android:textSize="25dp"
+                        android:textColor="#FFF"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="30dp"
+                        android:text="Fumeur"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:id="@+id/im_smoker"
+                        android:layout_width="25dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/notsmoker"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tv_menopaue"
+                        android:layout_width="wrap_content"
+                        android:textSize="0dp"
+                        android:textColor="#FFF"
+                        android:layout_marginStart="30dp"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tv_diabete"
+                        android:layout_width="wrap_content"
+                        android:textSize="25dp"
+                        android:textColor="#FFF"
+                        android:layout_marginStart="30dp"
+                        android:text="Diabetique"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_height="25dp"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tv_hypertension"
+                        android:layout_width="wrap_content"
+                        android:textSize="25dp"
+                        android:textColor="#FFF"
+                        android:layout_marginStart="30dp"
+                        android:text="Hypertensif"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_height="25dp"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tv_dyslipidimic"
+                        android:layout_width="wrap_content"
+                        android:textSize="25dp"
+                        android:textColor="#FFF"
+                        android:layout_marginStart="30dp"
+                        android:text="Dyslipidimic"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_height="25dp"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tv_familyAntecedent"
+                        android:layout_width="wrap_content"
+                        android:textSize="25dp"
+                        android:textColor="#FFF"
+                        android:layout_marginStart="30dp"
+                        android:text="Sans antecedents familiaux"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tv_personnelAntecedent"
+                        android:layout_width="wrap_content"
+                        android:textSize="25dp"
+                        android:textColor="#FFF"
+                        android:layout_marginStart="30dp"
+                        android:text="Sans antecedent personnels"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tv_chronicDisease"
+                        android:layout_width="wrap_content"
+                        android:textSize="25dp"
+                        android:textColor="#FFF"
+                        android:layout_marginStart="30dp"
+                        android:text="Sans maladie chronique"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+   </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -36,7 +36,6 @@
         <activity android:name=".DoctorCodeActivity" />
         <activity android:name=".MedicalProblemsActivity" />
         <activity android:name=".ChronicDiseaseActivity" />
-        <activity android:name=".MapsActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -57,7 +56,35 @@
         <activity android:name=".ValvePathologyActivity" />
         <activity android:name=".HeartRhythmPathologyActivity" />
         <activity android:name=".RiskCalculatorActivity" />
-        <activity android:name=".HeartFailureActivity"></activity>
+        <activity android:name=".HeartFailureActivity" />
+        <activity
+            android:name=".UserHomeActivity"
+            android:label="Home page"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Help"
+            android:label="@string/title_activity_help"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".Height" />
+        <activity
+            android:name=".AboutAs"
+            android:label="@string/title_activity_about_as"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".Weight" />
+        <activity android:name=".Qgender" />
+        <activity android:name=".QMenopause" />
+        <activity android:name=".QSmoking" />
+        <activity android:name=".QDiabetes" />
+        <activity android:name=".QRenalDiseeas" />
+        <activity android:name=".QHyperTension" />
+        <activity android:name=".QDyslipidemia" />
+        <activity android:name=".QFamilyAntecedent" />
+        <activity android:name=".ProfilFinalActivity" />
+        <activity android:name=".QAge" />
+        <activity
+            android:name=".ContactAs"
+            android:label="@string/title_activity_contact_as"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

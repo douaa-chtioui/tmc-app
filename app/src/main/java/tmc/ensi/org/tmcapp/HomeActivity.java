@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import tmc.ensi.org.tmcapp.model.ApplicationModel;
+
 public class HomeActivity extends AppCompatActivity {
 
     private Button profileButton;
@@ -30,8 +32,16 @@ public class HomeActivity extends AppCompatActivity {
         checkupFormButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), CheckupActivity.class);
-                startActivity(intent);
+                if (ApplicationModel.get().getCurrentUser().getHasDoctor())
+                {
+                    Intent intent = new Intent(getApplicationContext(), CheckupActivity.class);
+                    startActivity(intent);
+                } else {
+                    Intent intent = new Intent(getApplicationContext(), DoctorCodeActivity.class);
+                    startActivity(intent);
+                }
+
+
             }
         });
         chronicDiseaseButton.setOnClickListener(new View.OnClickListener() {
@@ -44,7 +54,7 @@ public class HomeActivity extends AppCompatActivity {
         riskCalculatorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),RiskCalculatorActivity.class);
+                Intent intent = new Intent(getApplicationContext(),UserHomeActivity.class);
                 startActivity(intent);
             }
         });
@@ -77,7 +87,7 @@ public class HomeActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             // Start the Signup activity
-            Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+            Intent intent = new Intent(getApplicationContext(), Height.class);
             startActivity(intent);
         }
 

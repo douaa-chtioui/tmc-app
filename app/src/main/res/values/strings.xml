@@ -26,4 +26,20 @@
         <item> Insuffisance cardiaque </item>
     </string-array>
     <string name="title_activity_maps2">Map</string>
+    <string name="title_activity_user_home">UserHomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_team">TeamActivity</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <string name="action_example">Example action</string>
+    <string name="title_activity_help">Help</string>
+    <string name="title_activity_about_as">AboutAs</string>
+    <string name="title_activity_contact_as">ContactAs</string>
 </resources>

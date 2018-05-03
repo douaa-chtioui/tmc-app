@@ -22,10 +22,10 @@ import tmc.ensi.org.tmcapp.model.User;
 import static tmc.ensi.org.tmcapp.model.Gender.MALE;
 
 public class ProfileActivity extends AppCompatActivity {
-    private RadioGroup genderRadioGroup, smokerRadioGroup, marriedRadioGroup, diabeticRadioGroup, kidneyRadioGroup, rmenopause, hypertensionRadioGroup, dyslipidemieRadioGroup, personalAntecedentRadioGroup, familyAntecendtRadioGroup;
+    private RadioGroup genderRadioGroup, smokerRadioGroup, marriedRadioGroup, diabeticRadioGroup, rmenopause, hypertensionRadioGroup, dyslipidemieRadioGroup, personalAntecedentRadioGroup, familyAntecendtRadioGroup;
     private TextView tmenopause;
     private Button saveButton;
-    private RadioButton checkFemaleButton, checkMaleButton, checkSmockerButton, checkNotSmockerButton , checkMarriedButton ,checkNotMarriedButton ,checkDiabiticButton ,checkNotDiabiticButton, checkMenopauseButton,checkNoMenopauseButton ,checkKidneyDiseaseButton ,checkNoKidneyDiseaseButton ,checkHypertensionButton ,checkNoHypertensionButton ,checkDyslipidemieButton ,checkNoDyslipidemieButton , checkFamilyAntecedentButton ,checkNoFamilyAntecedentButton , checkPersonalAntecedentButton , checkNoPersonalAntecedentButton ;
+    private RadioButton checkFemaleButton, checkMaleButton, checkSmockerButton, checkNotSmockerButton , checkMarriedButton ,checkNotMarriedButton ,checkDiabiticButton ,checkNotDiabiticButton, checkMenopauseButton,checkNoMenopauseButton  ,checkHypertensionButton ,checkNoHypertensionButton ,checkDyslipidemieButton ,checkNoDyslipidemieButton , checkFamilyAntecedentButton ,checkNoFamilyAntecedentButton , checkPersonalAntecedentButton , checkNoPersonalAntecedentButton ;
     private NumberPicker heightPicker;
     private NumberPicker weightPicker;
 
@@ -53,8 +53,7 @@ public class ProfileActivity extends AppCompatActivity {
         checkNotMarriedButton = findViewById(R.id.btn_checkMarried_F);
         checkDiabiticButton = findViewById(R.id.btn_checkDiabetic_T);
         checkNotDiabiticButton = findViewById(R.id.btn_checkDiabetic_F);
-        checkKidneyDiseaseButton = findViewById(R.id.btn_checkKidneyDisease_T);
-        checkNoKidneyDiseaseButton = findViewById(R.id.btn_checkKidneyDisease_F);
+
         checkHypertensionButton = findViewById(R.id.btn_checkhypertension_T);
         checkNoHypertensionButton = findViewById(R.id.btn_checkhypertension_F);
         checkDyslipidemieButton = findViewById(R.id.btn_checkdyslipidemie_T);
@@ -69,7 +68,6 @@ public class ProfileActivity extends AppCompatActivity {
         smokerRadioGroup = findViewById(R.id.rg_smoker);
         marriedRadioGroup = findViewById(R.id.rg_married);
         diabeticRadioGroup = findViewById(R.id.rg_diabetic);
-        kidneyRadioGroup = findViewById(R.id.rg_kidneyDisease);
         hypertensionRadioGroup = findViewById(R.id.rg_hypertension);
         dyslipidemieRadioGroup = findViewById(R.id.rg_dyslipidemie);
         familyAntecendtRadioGroup = findViewById(R.id.rg_familyAntecedent);

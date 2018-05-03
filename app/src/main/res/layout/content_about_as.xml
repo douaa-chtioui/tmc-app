@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".AboutAs"
+    tools:showIn="@layout/app_bar_about_as">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="142dp"
+        tools:layout_editor_absoluteY="64dp">
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:orientation="vertical">
+     <LinearLayout
+         android:layout_width="368dp"
+         android:layout_height="300dp"
+         android:background="@drawable/menu4"
+         android:orientation="vertical"
+         >
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:gravity="center"
+             android:orientation="vertical">
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="10dp"
+                 android:layout_gravity="center"
+                 android:gravity="center"
+                 android:textColor="@color/white"
+                 android:text="Notre equipe "
+                 android:textSize="40dp" />
+             <TextView
+                 android:layout_marginStart="10dp"
+                 android:layout_marginEnd="10dp"
+                 android:layout_marginTop="10dp"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:textSize="30dp"
+                 android:gravity="center"
+                 android:layout_marginBottom="20dp"
+                 android:textColor="@color/white"
+                 android:text="Derrière notre application, on trouve une equipe passionnée composée de médecins et d'amoureux de la technologie.
+                    "/>
+         </LinearLayout>
+     </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+                android:gravity="center"
+            android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:background="@drawable/home"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="30dp"
+                    android:gravity="center"
+                    android:text="DR Cheeri Wided"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:gravity="center"
+                    android:text="Fondatrisse"/>
+            </LinearLayout>
+     <LinearLayout
+         android:layout_marginTop="50dp"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:gravity="center"
+         android:orientation="vertical">
+
+         <ImageView
+             android:layout_width="150dp"
+             android:layout_height="150dp"
+             android:background="@drawable/home"/>
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textSize="30dp"
+             android:gravity="center"
+             android:text="DR Mzoughi Khadija"/>
+         <TextView
+             android:layout_width="200dp"
+             android:layout_height="wrap_content"
+             android:textSize="20dp"
+             android:gravity="center"
+             android:text="Cardiologue à hopital habib thamer"/>
+     </LinearLayout>
+     <LinearLayout
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="40dp"
+         android:orientation="horizontal">
+         <LinearLayout
+             android:layout_width="0dp"
+             android:orientation="vertical"
+             android:layout_height="wrap_content"
+             android:gravity="center"
+             android:layout_weight="1">
+             <ImageView
+                 android:layout_width="120dp"
+                 android:layout_height="120dp"
+                 android:background="@drawable/home"/>
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:textSize="30dp"
+                 android:gravity="center"
+                 android:text="Ghribi Rihab"/>
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:textSize="20dp"
+                 android:gravity="center"
+                 android:text="Cycle ingenieur à l'ENSI"/>
+         </LinearLayout>
+         <LinearLayout
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:orientation="vertical"
+             android:gravity="center"
+             android:layout_weight="1">
+             <ImageView
+                 android:layout_width="120dp"
+                 android:layout_height="120dp"
+                 android:background="@drawable/home"/>
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:textSize="30dp"
+                 android:gravity="center"
+                 android:text="Chtioui Douaa"/>
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:textSize="20dp"
+                 android:gravity="center"
+                 android:text="Cycle ingenieur à l'ENSI"/>
+         </LinearLayout>
+         <LinearLayout
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:orientation="vertical"
+             android:gravity="center"
+             android:layout_weight="1">
+             <ImageView
+                 android:layout_width="120dp"
+                 android:layout_height="120dp"
+                 android:background="@drawable/home"/>
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:textSize="30dp"
+                 android:gravity="center"
+                 android:text="Laabidi Sirine"/>
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:textSize="20dp"
+                 android:gravity="center"
+                 android:text="Cycle ingenieur à l'ENSI"/>
+         </LinearLayout>
+     </LinearLayout>
+ </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

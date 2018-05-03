@@ -18,7 +18,7 @@ public class ApplicationModel {
 
     private static final Retrofit retrofit = new Retrofit.Builder()
 //            .baseUrl("http://192.168.0.10:8080/")
-            .baseUrl("http://192.168.1.105:8080/")
+            .baseUrl("http://192.168.100.44:8080/")
             .addConverterFactory(JacksonConverterFactory.create())
             .build();
 
@@ -69,7 +69,7 @@ public class ApplicationModel {
         try {
             boolean successful = API.assignDoctor(this.currentUser.getIdentifier(), new DoctorAssignment(doctorCode)).execute().isSuccessful();
             if (successful) {
-                this.currentUser.setHasDoctor();
+                this.currentUser.setHasDoctor(true);
             }
             return successful;
         } catch (IOException e) {

@@ -64,8 +64,8 @@ public class User {
         return this.hasDoctor;
     }
 
-    public void setHasDoctor(){
-        this.hasDoctor = true;
+    public void setHasDoctor(boolean hasDoctor){
+        this.hasDoctor = hasDoctor;
     }
 
     public void setChronicDisease(ChronicDisease chronicDisease) { this.chronicDisease = chronicDisease; }

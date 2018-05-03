@@ -29,10 +29,10 @@ public class CheckupAdapter extends ArrayAdapter<Checkup> {
         convertView = LayoutInflater.from(context).inflate(ressource, parent , false);
 
         TextView tvName = (TextView) convertView.findViewById(R.id.tv_name);
-        TextView tvphone = (TextView)convertView.findViewById(R.id.tv_phone);
+        TextView tvDate = (TextView)convertView.findViewById(R.id.tv_date);
         Checkup currentCheckup = getItem(position);
         tvName.setText(currentCheckup.getName());
-        tvphone.setText(String.valueOf(currentCheckup.getDate()));
+        tvDate.setText(String.valueOf(currentCheckup.getDate()));
         return convertView ;
     }
 }
