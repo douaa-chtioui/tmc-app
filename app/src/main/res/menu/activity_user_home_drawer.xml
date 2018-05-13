@@ -7,15 +7,12 @@
 
     <item
         android:id="@+id/nav_home"
-        android:icon="@drawable/fleche"
         android:title="Présentation" />
     <item
         android:id="@+id/nav_import"
-        android:icon="@drawable/ic_menu_camera"
         android:title="qui somme-nous ?" />
     <item
         android:id="@+id/nav_gallery"
-        android:icon="@drawable/ic_menu_gallery"
         android:title="contactez nous" />
 
 

@@ -9,7 +9,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="explication"
         android:layout_marginLeft ="40dp"
         android:textSize="30dp"
         android:layout_height="wrap_content" />
@@ -22,16 +21,15 @@
     android:hint="donner le code de votre medecin"/>
     <Button
         android:id="@+id/btn_validateDoctorCode"
-        style="@style/Base.TextAppearance.AppCompat.Body1"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:background="@color/bluelight"
         android:clickable="true"
         android:padding="16dp"
         android:text="Valider"
         android:textAllCaps="false"
-        android:textColor="#f5031d"
+        android:layout_width="210dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="40dp"
+        android:background="#76c7a5"
+        android:textColor="#000"
+        android:layout_gravity="center"
         android:textSize="18sp" />
 </LinearLayout>

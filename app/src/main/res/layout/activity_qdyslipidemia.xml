@@ -49,25 +49,25 @@
                     android:orientation="horizontal">
 
                     <RadioGroup
-                        android:id="@+id/rg_gender"
+                        android:id="@+id/rg_dyslipidemie"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
                         <RadioButton
-                            android:id="@+id/btn_checkMale"
+                            android:id="@+id/btn_checkdyslipidemie_T"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
                             android:checked="true"
-                            android:text="Homme" />
+                            android:text="Oui" />
 
                         <RadioButton
-                            android:id="@+id/btn_checkFemale"
+                            android:id="@+id/btn_checkdyslipidemie_F"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
-                            android:text="Femme" />
+                            android:text="Non" />
                     </RadioGroup>
 
                 </LinearLayout>

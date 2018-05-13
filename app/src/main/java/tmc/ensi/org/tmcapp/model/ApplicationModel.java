@@ -18,7 +18,7 @@ public class ApplicationModel {
 
     private static final Retrofit retrofit = new Retrofit.Builder()
 //            .baseUrl("http://192.168.0.10:8080/")
-            .baseUrl("http://192.168.100.44:8080/")
+            .baseUrl("http://192.168.1.102:8080/")
             .addConverterFactory(JacksonConverterFactory.create())
             .build();
 

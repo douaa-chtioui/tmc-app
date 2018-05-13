@@ -27,7 +27,7 @@
         android:padding="10dp"
         android:layout_marginBottom="10dp"
         android:layout_gravity="center"
-        android:hint="precisez votre tension"
+        android:hint=" tension"
         android:fontFamily="sans-serif-condensed"
         />
     <EditText
@@ -37,15 +37,15 @@
         android:layout_gravity="center"
         android:padding="10dp"
         android:fontFamily="sans-serif-condensed"
-        android:hint="precisez votre taux "
+        android:hint="taux de cholestérol"
         android:layout_below="@id/et"
         />
     <Button
         android:layout_width="210dp"
         android:layout_height="70dp"
         android:layout_marginTop="40dp"
-        android:background="@drawable/blue_btn_bkg"
-        android:textColor="#FFF"
+        android:background="#76c7a5"
+        android:textColor="#000"
         android:text="calculez votre risque cardiovasculaire"
         android:layout_gravity="center"/>
 </LinearLayout>

@@ -16,6 +16,7 @@ public class QHyperTension extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qhyper_tension);
+        hypertensionRadioGroup = findViewById(R.id.rg_hypertension);
         nextButton = findViewById(R.id.next);
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override

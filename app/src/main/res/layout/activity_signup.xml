@@ -4,7 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#4a4c4e"
     tools:context="tmc.ensi.org.tmcapp.SignupActivity">
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="0dp"
+        android:layout_weight="1"
+        card_view:cardCornerRadius="25dp"
+        card_view:cardBackgroundColor="#e0f1ec"
+        card_view:cardElevation="5dp"
+        card_view:cardUseCompatPadding="true">
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
@@ -24,7 +35,7 @@
                 android:layout_height="72dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="24dp"
-                android:src="@drawable/logo" />
+                android:src="@drawable/login2" />
 
             <!-- Name Label -->
 
@@ -69,6 +80,7 @@
                 android:layout_marginBottom="24dp"
                 android:layout_marginTop="24dp"
                 android:padding="12dp"
+                android:background="#76c7a5"
                 android:text="Create Account" />
 
             <TextView
@@ -82,5 +94,6 @@
         </LinearLayout>
 
     </ScrollView>
+    </android.support.v7.widget.CardView>
 
 </android.support.constraint.ConstraintLayout>

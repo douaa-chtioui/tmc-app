@@ -7,4 +7,61 @@
     android:orientation="vertical"
     tools:context=".DoctorHomeActivity">
 
+    <include layout="@layout/toolbar_for_doctor"
+        android:id="@+id/mCustomToolbar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/mCustomToolbar"
+        android:background="@drawable/doctorhome2"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="40dp"
+            android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btn_profile"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/btn_circular"
+                />
+
+            <ImageView
+
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/profilicone" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btn_checkupForm"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/btn_circular" />
+
+            <ImageView
+
+                android:layout_width="70dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="8dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/doctorconsultation" />
+
+        </RelativeLayout>
+</LinearLayout>
+</LinearLayout>
 </LinearLayout>

@@ -5,13 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CheckupActivity">
+
     <Button
         android:id="@+id/btnAdd"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:layout_centerInParent="true"
+        android:background="#76c7a5"
+        android:textColor="#000"
+        android:layout_marginBottom="20dp"
         android:layout_alignParentBottom="true"
-        android:text="envoyer nouveau formulaire"/>
+        android:text="posez une question"/>
 
     <ListView
         android:id="@+id/formList"

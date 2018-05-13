@@ -23,7 +23,7 @@ public class NotificationBroadcastReceiver extends BroadcastReceiver {
                 if (userNotification != null) {
                     Log.d("ntag", userNotification.getText());
                     Notification notification = new NotificationCompat.Builder(context)
-                            .setContentTitle("Tiltle")
+                            .setContentTitle("Conseil")
                             .setContentText(userNotification.getText())
                             .setSmallIcon(android.R.drawable.stat_notify_chat)
                             .setPriority(NotificationCompat.PRIORITY_DEFAULT).build();

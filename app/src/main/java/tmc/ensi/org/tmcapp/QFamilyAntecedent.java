@@ -32,6 +32,7 @@ public class QFamilyAntecedent extends AppCompatActivity {
         setContentView(R.layout.activity_qfamily_antecedent);
         saveButton = findViewById(R.id.btn_save);
         saveButton.setOnClickListener(new SaveOnClickListener());
+        familyAntecendtRadioGroup =  findViewById(R.id.rg_familyAntecedent);
         homePageButton = findViewById(R.id.btn_home);
         homePageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,7 +86,7 @@ public class QFamilyAntecedent extends AppCompatActivity {
 
     }
     public void onUpdateProfileSuccess() {
-        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+        Intent intent = new Intent(getApplicationContext(), FinalProfilActivity.class);
         startActivity(intent);
         finish();
     }

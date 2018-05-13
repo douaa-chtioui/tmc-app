@@ -59,7 +59,7 @@
         <activity android:name=".HeartFailureActivity" />
         <activity
             android:name=".UserHomeActivity"
-            android:label="Home page"
+            android:label="Home"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".Help"
@@ -79,7 +79,7 @@
         <activity android:name=".QHyperTension" />
         <activity android:name=".QDyslipidemia" />
         <activity android:name=".QFamilyAntecedent" />
-        <activity android:name=".ProfilFinalActivity" />
+        <activity android:name=".FinalProfilActivity" />
         <activity android:name=".QAge" />
         <activity
             android:name=".ContactAs"

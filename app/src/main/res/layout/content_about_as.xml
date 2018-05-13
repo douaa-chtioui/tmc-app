@@ -64,7 +64,7 @@
                 <ImageView
                     android:layout_width="150dp"
                     android:layout_height="150dp"
-                    android:background="@drawable/home"/>
+                    android:background="@drawable/chaari"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -88,7 +88,7 @@
          <ImageView
              android:layout_width="150dp"
              android:layout_height="150dp"
-             android:background="@drawable/home"/>
+             android:background="@drawable/khadija"/>
          <TextView
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
@@ -114,9 +114,11 @@
              android:gravity="center"
              android:layout_weight="1">
              <ImageView
-                 android:layout_width="120dp"
-                 android:layout_height="120dp"
-                 android:background="@drawable/home"/>
+                 android:layout_width="100dp"
+                 android:layout_height="100dp"
+                 android:layout_marginStart="20dp"
+                 android:layout_marginEnd="20dp"
+                 android:background="@drawable/rihab"/>
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
@@ -137,9 +139,11 @@
              android:gravity="center"
              android:layout_weight="1">
              <ImageView
-                 android:layout_width="120dp"
-                 android:layout_height="120dp"
-                 android:background="@drawable/home"/>
+                 android:layout_width="100dp"
+                 android:layout_height="100dp"
+                 android:layout_marginStart="20dp"
+                 android:layout_marginEnd="20dp"
+                 android:background="@drawable/douaa"/>
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
@@ -160,9 +164,11 @@
              android:gravity="center"
              android:layout_weight="1">
              <ImageView
-                 android:layout_width="120dp"
-                 android:layout_height="120dp"
-                 android:background="@drawable/home"/>
+                 android:layout_width="100dp"
+                 android:layout_height="100dp"
+                 android:layout_marginStart="20dp"
+                 android:layout_marginEnd="20dp"
+                 android:background="@drawable/sirin"/>
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
