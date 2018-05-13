@@ -31,7 +31,7 @@ public class CheckupAdapter extends ArrayAdapter<Checkup> {
         TextView tvName = (TextView) convertView.findViewById(R.id.tv_name);
         TextView tvDate = (TextView)convertView.findViewById(R.id.tv_date);
         Checkup currentCheckup = getItem(position);
-        tvName.setText(currentCheckup.getName());
+        tvName.setText("User name");
         tvDate.setText(String.valueOf(currentCheckup.getDate()));
         return convertView ;
     }

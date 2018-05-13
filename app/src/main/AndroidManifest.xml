@@ -87,6 +87,8 @@
             android:theme="@style/AppTheme" />
         <activity android:name=".DoctorCheckupActivity" />
         <activity android:name=".QChronicdisease" />
+        <activity android:name=".DoctorCheckupDetailsActivity" />
+        <activity android:name=".DoctorCheckupReply"></activity>
     </application>
 
 </manifest>

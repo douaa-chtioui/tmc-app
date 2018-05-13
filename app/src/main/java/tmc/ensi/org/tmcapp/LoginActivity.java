@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import tmc.ensi.org.tmcapp.model.ApplicationModel;
+import tmc.ensi.org.tmcapp.model.Profile;
 import tmc.ensi.org.tmcapp.model.User;
 import tmc.ensi.org.tmcapp.model.UserCredential;
 
@@ -84,9 +85,13 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void onLoginSuccess() {
-        Intent intent = new Intent(getApplicationContext(), UserHomeActivity.class);
+        if (ApplicationModel.get().getCurrentUser().isPatient()){
+        Intent intent = new Intent(getApplicationContext(), DoctorHomeActivity.class);
         startActivity(intent);
-        finish();
+        finish(); } else {
+            Intent intent = new Intent(getApplicationContext(), DoctorHomeActivity.class);
+            startActivity(intent);
+        }
     }
 
     @Override

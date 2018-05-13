@@ -1,25 +1,37 @@
 package tmc.ensi.org.tmcapp.model;
 
-public class Checkup {
-    private String name;
-    private String date ;
-    public Checkup(String name , String date)
-    {this.name = name ;
-        this.date = date ; }
+import java.util.Date;
 
-    public String getName() {
-        return name;
+public class Checkup {
+    private Date date ;
+    private String patientComment;
+    private String doctorComment;
+
+    public Checkup() {
+
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public String getPatientComment() {
+        return patientComment;
+    }
+
+    public void setPatientComment(String patientComment) {
+        this.patientComment = patientComment;
+    }
+
+    public String getDoctorComment() {
+        return doctorComment;
+    }
+
+    public void setDoctorComment(String doctorComment) {
+        this.doctorComment = doctorComment;
     }
 }
