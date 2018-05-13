@@ -24,6 +24,7 @@ public class FinalProfilActivity extends AppCompatActivity {
     private TextView familyAntecedent ;
     private TextView chronicDisease ;
     private TextView name ;
+    private TextView chronicDiseasetv ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,7 @@ public class FinalProfilActivity extends AppCompatActivity {
         smoker = findViewById(R.id.tv_smoker);
         menopause = findViewById(R.id.tv_menopaue);
         height = findViewById(R.id.tv_height);
+        chronicDiseasetv = findViewById(R.id.tv_chronicDisease);
         weight = findViewById(R.id.tv_weight);
         diabetes = findViewById(R.id.tv_diabete);
         dyslipidemia = findViewById(R.id.tv_dyslipidimic);
@@ -75,7 +77,7 @@ public class FinalProfilActivity extends AppCompatActivity {
                 }
                 if (profile.isMenopause()) {
                     menopause.setText("Ménopausée");
-                    menopause.setTextSize(25);
+                    menopause.setTextSize(20);
                 } else {
                     menopause.setText("Non Ménopausée");
                     menopause.setTextSize(25);
@@ -87,15 +89,13 @@ public class FinalProfilActivity extends AppCompatActivity {
                 }
             }
             if (profile.isFamilyAntecedent()) {
-                familyAntecedent.setText("Avec des antecedents familiaux");
+                familyAntecedent.setText("Avec antecedents familiaux");
+            } else {
+                familyAntecedent.setText("Sans antecedents familiaux");
             }
-            if (profile.isFamilyAntecedent()) {
-                personnelAntecedent.setText("Avec des antecedents personnelles");
-            }
-
             height.setText(String.valueOf(profile.getHeight()));
-            // weight.setText(String.valueOf(profile.getWeight()));
-            //name.setText(ApplicationModel.get().getCurrentUser().getFirstname());
+            weight.setText(String.valueOf(profile.getWeight()));
+            name.setText(ApplicationModel.get().getCurrentUser().getFirstname()+ " " + ApplicationModel.get().getCurrentUser().getFirstname());
             if (profile.isDiabetic()) {
                 diabetes.setText("Diabétique");
             } else {
@@ -106,7 +106,12 @@ public class FinalProfilActivity extends AppCompatActivity {
             } else {
                 dyslipidemia.setText("Non dyslipidémique");
             }
+            if (ApplicationModel.get().getCurrentUser().getChronicDisease() != null)
+            {
+                chronicDiseasetv.setText("Avec des maladies chroniques");
+            }
         }
+
     }
 
     }

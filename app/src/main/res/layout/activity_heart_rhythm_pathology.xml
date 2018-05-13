@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     tools:context=".ValvePathologyActivity">
+    <include layout="@layout/toolbar_actionbar_with_headerbar"
+        android:id="@+id/mCustomToolbar"/>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,12 +20,13 @@
             android:orientation="vertical"
             android:tag="cards main container">
             <android.support.v7.widget.CardView
-                android:layout_marginTop="22dp"
+                android:layout_marginTop="65dp"
                 android:id="@+id/card_view"
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
                 card_view:cardCornerRadius="10dp"
+                card_view:cardBackgroundColor="#cbe3d8"
                 card_view:cardElevation="5dp"
                 card_view:cardUseCompatPadding="true">
                 <LinearLayout
@@ -61,10 +65,12 @@
                             >
 
                             <RadioGroup
+                                android:id="@+id/rg_pacemaker"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
 
                                     <RadioButton
+                                        android:id="@+id/rb_withpacemaker"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="Oui"/>
@@ -87,6 +93,7 @@
                 android:layout_height="124dp"
                 card_view:cardCornerRadius="10dp"
                 card_view:cardElevation="5dp"
+                card_view:cardBackgroundColor="#cbe3d8"
                 card_view:cardUseCompatPadding="true">
 
                 <LinearLayout
@@ -125,10 +132,12 @@
                             android:orientation="vertical">
 
                             <RadioGroup
+                                android:id="@+id/rg_defibrillator"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
 
                                 <RadioButton
+                                    android:id="@+id/rb_withDefibrillator"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Oui" />
@@ -150,6 +159,7 @@
                 android:layout_height="124dp"
                 card_view:cardCornerRadius="10dp"
                 card_view:cardElevation="5dp"
+                card_view:cardBackgroundColor="#cbe3d8"
                 card_view:cardUseCompatPadding="true">
 
                 <LinearLayout
@@ -162,7 +172,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="18dp"
                         android:textColor="@color/colorAccent"
-                        android:text="avez vous un défibrillateur?"
+                        android:text="avez vous un triple chambre ?"
                         android:textSize="20dp" />
 
                     <LinearLayout
@@ -188,12 +198,14 @@
                             android:orientation="vertical">
 
                             <RadioGroup
+                                android:id="@+id/rg_tripleRoom"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
 
                                 <RadioButton
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:id="@+id/rb_withTripleRoom"
                                     android:text="Oui" />
 
                                 <RadioButton
@@ -213,6 +225,7 @@
                 android:layout_height="124dp"
                 card_view:cardCornerRadius="10dp"
                 card_view:cardElevation="5dp"
+                card_view:cardBackgroundColor="#cbe3d8"
                 card_view:cardUseCompatPadding="true">
 
                 <LinearLayout
@@ -225,7 +238,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="18dp"
                         android:textColor="@color/colorAccent"
-                        android:text="avez vous un défibrillateur?"
+                        android:text="avez vous une fibrillation auriculaire ?"
                         android:textSize="20dp" />
 
                     <LinearLayout
@@ -251,10 +264,12 @@
                             android:orientation="vertical">
 
                             <RadioGroup
+                                android:id="@+id/rg_atrialFibrillation"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
 
                                 <RadioButton
+                                    android:id="@+id/rb_withAtrialFibrillation"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Oui" />
@@ -271,8 +286,8 @@
                 </LinearLayout>
             </android.support.v7.widget.CardView>
             <Button
-                android:id="@+id/btn_valvePathology"
-                android:background="#22b6ce"
+                android:id="@+id/btn_save"
+                android:background="#76c7a5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -281,4 +296,4 @@
         </LinearLayout>
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

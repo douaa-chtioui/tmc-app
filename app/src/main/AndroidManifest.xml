@@ -84,7 +84,9 @@
         <activity
             android:name=".ContactAs"
             android:label="@string/title_activity_contact_as"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".DoctorCheckupActivity" />
+        <activity android:name=".QChronicdisease" />
     </application>
 
 </manifest>

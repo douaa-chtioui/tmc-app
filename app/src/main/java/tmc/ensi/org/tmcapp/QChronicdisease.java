@@ -13,40 +13,55 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import tmc.ensi.org.tmcapp.model.ApplicationModel;
-import tmc.ensi.org.tmcapp.model.ChronicDisease;
-import tmc.ensi.org.tmcapp.model.Disease;
 
-public class CoronaryPathologyActivity extends AppCompatActivity {
-    RadioGroup stentsPosRGroup ;
-    RadioGroup aeroCoronaryRGroup ;
-    Button nextButton ;
+public class QChronicdisease extends AppCompatActivity {
+    private Button nextButton, homePageButton, retutnButton;
+    private RadioGroup chronicDiseaseRadioGroup;
+    private RadioButton checkChronicDiseaseButton;
+    private boolean chronicDisease;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_coronary_pathology);
-        stentsPosRGroup = (RadioGroup) findViewById(R.id.rg_stentsPos) ;
-        aeroCoronaryRGroup = (RadioGroup) findViewById(R.id.rg_aeroCoronary) ;
-
-
-        nextButton = findViewById(R.id.btn_save);
+        setContentView(R.layout.activity_qchronicdisease);
+        checkChronicDiseaseButton = findViewById(R.id.btn_chronicDisease_T);
+        chronicDiseaseRadioGroup = findViewById(R.id.rg_chronicDisease);
+        nextButton = findViewById(R.id.next);
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                boolean stentsPos = stentsPosRGroup.getCheckedRadioButtonId() == findViewById(R.id.rb_checkStentsPos).getId();
-                boolean aeroCoronary = aeroCoronaryRGroup.getCheckedRadioButtonId() == findViewById(R.id.rb_checkAeroCoronary).getId();
-                ChronicDisease chronicDisease = new ChronicDisease();
-                chronicDisease.setStentsPose(stentsPos);
-                chronicDisease.setAortoCoronaryBypass(aeroCoronary);
-                ApplicationModel.get().getCurrentUser().setChronicDisease(chronicDisease);
-                new UpdateChronicDiseaseAsyncTask(CoronaryPathologyActivity.this).execute();
+                chronicDisease = chronicDiseaseRadioGroup.getCheckedRadioButtonId() == findViewById(R.id.btn_chronicDisease_T).getId();
+                if (chronicDisease) {
+                    Intent intent = new Intent(getApplicationContext(), ChronicDiseaseActivity.class);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    new UpdateProfileAsyncTask(QChronicdisease.this).execute();
+                }
+
             }
         });
-
-
+        homePageButton = findViewById(R.id.btn_home);
+        homePageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), UserHomeActivity.class);
+                startActivity(intent);
+                finishAffinity();
+            }
+        });
+        retutnButton = findViewById(R.id.btn_return);
+        retutnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
+
     public void onUpdateProfileSuccess() {
-        Intent intent = new Intent(getApplicationContext(),FinalProfilActivity.class);
+        Intent intent = new Intent(getApplicationContext(), FinalProfilActivity.class);
         startActivity(intent);
         finish();
     }
@@ -56,12 +71,12 @@ public class CoronaryPathologyActivity extends AppCompatActivity {
         nextButton.setEnabled(true);
     }
 
-    private static class UpdateChronicDiseaseAsyncTask extends AsyncTask<Void, Void, Void> {
+    private static class UpdateProfileAsyncTask extends AsyncTask<Void, Void, Void> {
         private ProgressDialog progress;
         private boolean success = false;
-        private CoronaryPathologyActivity activity;
+        private QChronicdisease activity;
 
-        UpdateChronicDiseaseAsyncTask(CoronaryPathologyActivity activity) {
+        UpdateProfileAsyncTask(QChronicdisease activity) {
             this.activity = activity;
             progress = new ProgressDialog(activity);
             progress.setIndeterminate(true);
@@ -77,7 +92,7 @@ public class CoronaryPathologyActivity extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... params) {
             try {
-                success = ApplicationModel.get().updateCurrentChronicDisease();
+                success = ApplicationModel.get().updateCurrentUserProfile();
             } catch (Exception e) {
                 Log.e(QFamilyAntecedent.class.getSimpleName(), QFamilyAntecedent.class.getSimpleName(), e);
             }
@@ -98,6 +113,5 @@ public class CoronaryPathologyActivity extends AppCompatActivity {
         }
 
     }
-
 
 }

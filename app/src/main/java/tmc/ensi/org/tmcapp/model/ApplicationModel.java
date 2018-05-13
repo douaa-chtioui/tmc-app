@@ -17,8 +17,8 @@ import retrofit2.http.Query;
 public class ApplicationModel {
 
     private static final Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://192.168.0.10:8080/")
-//            .baseUrl("http://192.168.1.102:8080/")
+//            .baseUrl("http://192.168.0.10:8080/")
+            .baseUrl("http://192.168.1.102:8080/")
             .addConverterFactory(JacksonConverterFactory.create())
             .build();
 
@@ -53,12 +53,8 @@ public class ApplicationModel {
         return API.updatePatientProfile(currentUser.getIdentifier(),currentUser.getProfile()).execute().isSuccessful();
     }
 
-    public boolean updateCurrentChronicDisease(ChronicDisease chronicDisease) throws IOException {
-        boolean updated = API.updatePatientChronicDisease(currentUser.getIdentifier(), chronicDisease).execute().isSuccessful();
-        if (updated) {
-            this.currentUser.setChronicDisease(chronicDisease);
-        }
-        return updated;
+    public boolean updateCurrentChronicDisease() throws IOException {
+        return API.updatePatientChronicDisease(currentUser.getIdentifier(), currentUser.getChronicDisease()).execute().isSuccessful();
     }
 
     public UserNotification fetchNotification() {

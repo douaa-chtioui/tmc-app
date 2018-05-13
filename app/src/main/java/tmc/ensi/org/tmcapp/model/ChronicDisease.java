@@ -51,6 +51,43 @@ public class ChronicDisease {
         return ventricularFibrillation;
     }
 
+
+    public void setDisease(Disease disease) {
+        this.disease = disease;
+    }
+
+    public void setMechanicalValve(boolean mechanicalValve) {
+        this.mechanicalValve = mechanicalValve;
+    }
+
+    public void setBiologicalValve(boolean biologicalValve) {
+        this.biologicalValve = biologicalValve;
+    }
+
+    public void setStentsPose(boolean stentsPose) {
+        this.stentsPose = stentsPose;
+    }
+
+    public void setAortoCoronaryBypass(boolean aortoCoronaryBypass) {
+        this.aortoCoronaryBypass = aortoCoronaryBypass;
+    }
+
+    public void setPacemaker(boolean pacemaker) {
+        this.pacemaker = pacemaker;
+    }
+
+    public void setDefibrillator(boolean defibrillator) {
+        this.defibrillator = defibrillator;
+    }
+
+    public void setTripleRoom(boolean tripleRoom) {
+        this.tripleRoom = tripleRoom;
+    }
+
+    public void setVentricularFibrillation(boolean ventricularFibrillation) {
+        this.ventricularFibrillation = ventricularFibrillation;
+    }
+
     public static class Builder {
         private ChronicDisease chronicDisease = null;
 
