@@ -8,11 +8,12 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import tmc.ensi.org.tmcapp.model.ApplicationModel;
+
 public class QDiabetes extends AppCompatActivity {
     private Button nextButton , homePageButton ,retutnButton;
     private RadioGroup diabeticRadioGroup;
     private RadioButton checkDiabiticButton ,checkNotDiabiticButton ;
-    private boolean diabitic;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,9 +25,10 @@ public class QDiabetes extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                boolean diabitic = diabeticRadioGroup.getCheckedRadioButtonId() == findViewById(R.id.btn_checkDiabetic_T).getId();
+                ApplicationModel.get().getCurrentUser().getProfile().setDiabetic(diabitic);
                 Intent intent = new Intent(getApplicationContext(),QRenalDiseeas.class);
                 startActivity(intent);
-                diabitic = diabeticRadioGroup.getCheckedRadioButtonId() == findViewById(R.id.btn_checkDiabetic_T).getId();
             }
         });
         homePageButton = findViewById(R.id.btn_home);
@@ -47,7 +49,4 @@ public class QDiabetes extends AppCompatActivity {
         });
     }
 
-    public boolean isDiabitic() {
-        return diabitic;
-    }
 }

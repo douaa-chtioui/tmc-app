@@ -23,7 +23,6 @@ import static tmc.ensi.org.tmcapp.model.Gender.MALE;
 
 public class QFamilyAntecedent extends AppCompatActivity {
     private RadioGroup familyAntecendtRadioGroup;
-    private boolean familyAntecedent ;
     private Button saveButton;
     private Button  homePageButton ,retutnButton;
     @Override
@@ -37,6 +36,8 @@ public class QFamilyAntecedent extends AppCompatActivity {
         homePageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                boolean familyAntecedent = familyAntecendtRadioGroup.getCheckedRadioButtonId() == findViewById(R.id.btn_checkFamilyAntecendt_True).getId();
+                ApplicationModel.get().getCurrentUser().getProfile().setFamilyAntecedent(familyAntecedent);
                 Intent intent = new Intent(getApplicationContext(),UserHomeActivity.class);
                 startActivity(intent);
                 finishAffinity();
@@ -59,29 +60,7 @@ public class QFamilyAntecedent extends AppCompatActivity {
                 return;
             }
             saveButton.setEnabled(false);
-            Weight weight = new Weight();
-            Height height = new Height();
-            QSmoking smoking = new QSmoking();
-            Qgender qgender = new Qgender();
-            QMenopause qMenopause = new QMenopause();
-            QDyslipidemia qDyslipidemia = new QDyslipidemia() ;
-            QHyperTension qHyperTension = new QHyperTension() ;
-            QDiabetes qDiabetes = new QDiabetes();
-            QFamilyAntecedent qFamilyAntecedent = new QFamilyAntecedent();
-
-            familyAntecedent = familyAntecendtRadioGroup.getCheckedRadioButtonId() == findViewById(R.id.btn_checkFamilyAntecendt_True).getId();
-            Profile profile = new Profile.Builder().newProfile()
-                   .withWeight(weight.getWheight())
-                    .withHeight(height.getHeight())
-                    .withGender(qgender.getGender())
-                    .withMenopause(qMenopause.isMenopause())
-                    .withSmoker(smoking.isSmoker())
-                    .withDiabetic(qDiabetes.isDiabitic())
-                    .withHypertensive(qHyperTension.isHypertensive())
-                    .withDyslipidemic(qDyslipidemia.isDyslipidemic())
-                    .withFamilyAntecedent(qFamilyAntecedent.isFamilyAntecedent())
-                    .build();
-            new UpdateProfileAsyncTask(QFamilyAntecedent.this).execute(profile);
+            new UpdateProfileAsyncTask(QFamilyAntecedent.this).execute();
         }
 
     }
@@ -102,7 +81,7 @@ public class QFamilyAntecedent extends AppCompatActivity {
         return valid;
     }
 
-    private static class UpdateProfileAsyncTask extends AsyncTask<Profile, Void, Void> {
+    private static class UpdateProfileAsyncTask extends AsyncTask<Void, Void, Void> {
         private ProgressDialog progress;
         private boolean success = false;
         private QFamilyAntecedent activity;
@@ -121,9 +100,9 @@ public class QFamilyAntecedent extends AppCompatActivity {
         }
 
         @Override
-        protected Void doInBackground(Profile... params) {
+        protected Void doInBackground(Void... params) {
             try {
-                success = ApplicationModel.get().updateCurrentUserProfile(params[0]);
+                success = ApplicationModel.get().updateCurrentUserProfile();
             } catch (Exception e) {
                 Log.e(QFamilyAntecedent.class.getSimpleName(), QFamilyAntecedent.class.getSimpleName(), e);
             }
@@ -145,7 +124,4 @@ public class QFamilyAntecedent extends AppCompatActivity {
 
     }
 
-    public boolean isFamilyAntecedent() {
-        return familyAntecedent;
-    }
 }

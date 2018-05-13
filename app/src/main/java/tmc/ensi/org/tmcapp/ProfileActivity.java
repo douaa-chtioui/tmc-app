@@ -163,36 +163,36 @@ public class ProfileActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {
-            if (!validate()) {
-                onUpdateProfileFailure();
-                return;
-            }
-            saveButton.setEnabled(false);
-            Gender gender = genderRadioGroup.getCheckedRadioButtonId() == checkFemaleButton.getId() ? Gender.FEMALE : MALE;
-            int wheight = weightPicker.getValue() ;
-            int height = heightPicker.getValue();
-            boolean married = marriedRadioGroup.getCheckedRadioButtonId() == findViewById(R.id.btn_checkMarried_T).getId();
-            boolean smoker = smokerRadioGroup.getCheckedRadioButtonId() == findViewById(R.id.btn_checkSmoker_T).getId();
-            boolean diabetic = diabeticRadioGroup.getCheckedRadioButtonId() == findViewById(R.id.btn_checkDiabetic_T).getId();
-            boolean hypertensive = hypertensionRadioGroup.getCheckedRadioButtonId() == findViewById(R.id.btn_checkhypertension_T).getId();
-            boolean dyslipidemic = dyslipidemieRadioGroup.getCheckedRadioButtonId() == findViewById(R.id.btn_checkdyslipidemie_T).getId();
-            boolean personalAntecedent = personalAntecedentRadioGroup.getCheckedRadioButtonId() == findViewById(R.id.btn_checkPersonalAntecedent_T).getId();
-            boolean familyAntecedent = familyAntecendtRadioGroup.getCheckedRadioButtonId() == findViewById(R.id.btn_checkFamilyAntecendt_True).getId();
-            boolean menopause = rmenopause.getCheckedRadioButtonId()== findViewById(R.id.btn_checkMenopause_T).getId() ;
-            Profile profile = new Profile.Builder().newProfile()
-                    .withWeight(wheight)
-                    .withHeight(height)
-                    .withGender(gender)
-                    .withMenopause(menopause)
-                    .withSmoker(smoker)
-                    .withMarried(married)
-                    .withDiabetic(diabetic)
-                    .withHypertensive(hypertensive)
-                    .withDyslipidemic(dyslipidemic)
-                    .withPersonalAntecedent(personalAntecedent)
-                    .withFamilyAntecedent(familyAntecedent)
-                    .build();
-            new UpdateProfileAsyncTask(ProfileActivity.this).execute(profile);
+//            if (!validate()) {
+//                onUpdateProfileFailure();
+//                return;
+//            }
+//            saveButton.setEnabled(false);
+//            Gender gender = genderRadioGroup.getCheckedRadioButtonId() == checkFemaleButton.getId() ? Gender.FEMALE : MALE;
+//            int wheight = weightPicker.getValue() ;
+//            int height = heightPicker.getValue();
+//            boolean married = marriedRadioGroup.getCheckedRadioButtonId() == findViewById(R.id.btn_checkMarried_T).getId();
+//            boolean smoker = smokerRadioGroup.getCheckedRadioButtonId() == findViewById(R.id.btn_checkSmoker_T).getId();
+//            boolean diabetic = diabeticRadioGroup.getCheckedRadioButtonId() == findViewById(R.id.btn_checkDiabetic_T).getId();
+//            boolean hypertensive = hypertensionRadioGroup.getCheckedRadioButtonId() == findViewById(R.id.btn_checkhypertension_T).getId();
+//            boolean dyslipidemic = dyslipidemieRadioGroup.getCheckedRadioButtonId() == findViewById(R.id.btn_checkdyslipidemie_T).getId();
+//            boolean personalAntecedent = personalAntecedentRadioGroup.getCheckedRadioButtonId() == findViewById(R.id.btn_checkPersonalAntecedent_T).getId();
+//            boolean familyAntecedent = familyAntecendtRadioGroup.getCheckedRadioButtonId() == findViewById(R.id.btn_checkFamilyAntecendt_True).getId();
+//            boolean menopause = rmenopause.getCheckedRadioButtonId()== findViewById(R.id.btn_checkMenopause_T).getId() ;
+//            Profile profile = new Profile.Builder().newProfile()
+//                    .withWeight(wheight)
+//                    .withHeight(height)
+//                    .withGender(gender)
+//                    .withMenopause(menopause)
+//                    .withSmoker(smoker)
+//                    .withMarried(married)
+//                    .withDiabetic(diabetic)
+//                    .withHypertensive(hypertensive)
+//                    .withDyslipidemic(dyslipidemic)
+//                    .withPersonalAntecedent(personalAntecedent)
+//                    .withFamilyAntecedent(familyAntecedent)
+//                    .build();
+//            new UpdateProfileAsyncTask(ProfileActivity.this).execute(profile);
         }
 
     }
@@ -234,11 +234,11 @@ public class ProfileActivity extends AppCompatActivity {
 
         @Override
         protected Void doInBackground(Profile... params) {
-            try {
-                success = ApplicationModel.get().updateCurrentUserProfile(params[0]);
-            } catch (Exception e) {
-                Log.e(ProfileActivity.class.getSimpleName(), ProfileActivity.class.getSimpleName(), e);
-            }
+//            try {
+//                success = ApplicationModel.get().updateCurrentUserProfile(params[0]);
+//            } catch (Exception e) {
+//                Log.e(ProfileActivity.class.getSimpleName(), ProfileActivity.class.getSimpleName(), e);
+//            }
             return null;
         }
 

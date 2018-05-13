@@ -9,11 +9,12 @@ import android.widget.NumberPicker;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import tmc.ensi.org.tmcapp.model.ApplicationModel;
+
 public class QSmoking extends AppCompatActivity {
     private RadioGroup  smokerRadioGroup ;
     private RadioButton checkSmockerButton, checkNotSmockerButton ;
     private Button nextButton , homePageButton ,retutnButton;
-    private boolean smoker ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,9 +26,10 @@ public class QSmoking extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                boolean   smoker = smokerRadioGroup.getCheckedRadioButtonId() == findViewById(R.id.btn_checkSmoker_T).getId();
+                ApplicationModel.get().getCurrentUser().getProfile().setSmoker(smoker);
                 Intent intent = new Intent(getApplicationContext(),QDiabetes.class);
                 startActivity(intent);
-                smoker = smokerRadioGroup.getCheckedRadioButtonId() == findViewById(R.id.btn_checkSmoker_T).getId();
             }
         });
         homePageButton = findViewById(R.id.btn_home);
@@ -48,7 +50,4 @@ public class QSmoking extends AppCompatActivity {
         });
     }
 
-    public boolean isSmoker() {
-        return smoker;
-    }
 }

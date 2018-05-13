@@ -57,73 +57,47 @@ public class Profile {
         return familyAntecedent;
     }
 
-    public static class Builder {
-        private Profile profile = null;
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
 
-        public Builder newProfile() {
-            this.profile = new Profile();
-            return this;
-        }
+    public void setMenopause(boolean menopause) {
+        this.menopause = menopause;
+    }
 
-        public Builder withGender(Gender gender) {
-            this.profile.gender = gender;
-            return this;
-        }
-        public Builder withMenopause(boolean menopause) {
-            this.profile.menopause = menopause;
-            return this;
-        }
-        public Builder withHeight(int height) {
-            this.profile.height = height;
-            return this;
-        }
+    public void setHeight(int height) {
+        this.height = height;
+    }
 
-        public Builder withWeight(int weight) {
-            this.profile.weight = weight;
-            return this;
-        }
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
 
+    public void setSmoker(boolean smoker) {
+        this.smoker = smoker;
+    }
 
-        public Builder withSmoker(boolean smoker) {
-            this.profile.smoker = smoker;
-            return this;
-        }
+    public void setMarried(boolean married) {
+        this.married = married;
+    }
 
-        public Builder withMarried(boolean Married) {
-            this.profile.married = Married;
-            return this;
-        }
+    public void setDiabetic(boolean diabetic) {
+        this.diabetic = diabetic;
+    }
 
-        public Builder withDiabetic(boolean Diabetic) {
-            this.profile.diabetic = Diabetic;
-            return this;
-        }
+    public void setHypertensive(boolean hypertensive) {
+        this.hypertensive = hypertensive;
+    }
 
-        public Builder withHypertensive(boolean Hypertensive) {
-            this.profile.hypertensive = Hypertensive;
-            return this;
-        }
+    public void setDyslipidemic(boolean dyslipidemic) {
+        this.dyslipidemic = dyslipidemic;
+    }
 
-        public Builder withDyslipidemic(boolean Dyslipidemic) {
-            this.profile.dyslipidemic = Dyslipidemic;
-            return this;
-        }
+    public void setPersonalAntecedent(boolean personalAntecedent) {
+        this.personalAntecedent = personalAntecedent;
+    }
 
-
-        public Builder withPersonalAntecedent(boolean PersonalAntecedent) {
-            this.profile.personalAntecedent = PersonalAntecedent;
-            return this;
-        }
-
-
-        public Builder withFamilyAntecedent(boolean familyAntecedent) {
-            this.profile.familyAntecedent = familyAntecedent;
-            return this;
-        }
-
-
-        public Profile build() {
-            return this.profile;
-        }
+    public void setFamilyAntecedent(boolean familyAntecedent) {
+        this.familyAntecedent = familyAntecedent;
     }
 }

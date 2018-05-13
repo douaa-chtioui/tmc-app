@@ -49,12 +49,8 @@ public class ApplicationModel {
         return this.currentUser;
     }
 
-    public boolean updateCurrentUserProfile(Profile profile) throws IOException {
-        boolean updated = API.updatePatientProfile(currentUser.getIdentifier(), profile).execute().isSuccessful();
-        if (updated) {
-            this.currentUser.setProfile(profile);
-        }
-        return updated;
+    public boolean updateCurrentUserProfile() throws IOException {
+        return API.updatePatientProfile(currentUser.getIdentifier(),currentUser.getProfile()).execute().isSuccessful();
     }
 
     public boolean updateCurrentChronicDisease(ChronicDisease chronicDisease) throws IOException {

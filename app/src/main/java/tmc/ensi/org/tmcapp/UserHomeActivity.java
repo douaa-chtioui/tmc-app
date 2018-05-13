@@ -18,6 +18,7 @@ import android.support.v4.view.ViewPager;
 import android.widget.Button;
 
 import com.viewpagerindicator.CirclePageIndicator;
+
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -29,16 +30,16 @@ public class UserHomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private Button profileButton;
-    private Button checkupFormButton ;
-    private Button nearByHospitalButton ;
-    private Button riskCalculatorButton ;
+    private Button checkupFormButton;
+    private Button nearByHospitalButton;
+    private Button riskCalculatorButton;
     private static ViewPager mPager;
     private static int currentPage = 0;
     private static int NUM_PAGES = 0;
     private ArrayList<ImageModel> imageModelArrayList;
     private int[] myImageList = new int[]{R.drawable.menu1, R.drawable.menu2,
-            R.drawable.menu3,R.drawable.menu4
-            ,R.drawable.menu5,R.drawable.menu6};
+            R.drawable.menu3, R.drawable.menu4
+            , R.drawable.menu5, R.drawable.menu6};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,8 +53,7 @@ public class UserHomeActivity extends AppCompatActivity
         checkupFormButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ApplicationModel.get().getCurrentUser().getHasDoctor())
-                {
+                if (ApplicationModel.get().getCurrentUser().getHasDoctor()) {
                     Intent intent = new Intent(getApplicationContext(), CheckupActivity.class);
                     startActivity(intent);
                 } else {
@@ -67,14 +67,14 @@ public class UserHomeActivity extends AppCompatActivity
         riskCalculatorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),RiskCalculatorActivity.class);
+                Intent intent = new Intent(getApplicationContext(), RiskCalculatorActivity.class);
                 startActivity(intent);
             }
         });
         nearByHospitalButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),MapsActivity2.class);
+                Intent intent = new Intent(getApplicationContext(), MapsActivity2.class);
                 startActivity(intent);
             }
         });
@@ -84,11 +84,12 @@ public class UserHomeActivity extends AppCompatActivity
             public void onClick(View view) {
                 Profile profile = ApplicationModel.get().getCurrentUser().getProfile();
                 if (profile != null) {
-                    Intent intent = new Intent(getApplicationContext(),FinalProfilActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), FinalProfilActivity.class);
                     startActivity(intent);
-                }else {
-                Intent intent = new Intent(getApplicationContext(),Weight.class);
-                startActivity(intent); }
+                } else {
+                    Intent intent = new Intent(getApplicationContext(), Weight.class);
+                    startActivity(intent);
+                }
             }
         });
         scheduleNotifications();
@@ -105,6 +106,7 @@ public class UserHomeActivity extends AppCompatActivity
         imageModelArrayList = populateList();
         init();
     }
+
     private void scheduleNotifications() {
         Intent intent = new Intent(getApplicationContext(), NotificationBroadcastReceiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 42, intent, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -127,6 +129,7 @@ public class UserHomeActivity extends AppCompatActivity
         getMenuInflater().inflate(R.menu.user_home, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -140,21 +143,21 @@ public class UserHomeActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        int id=item.getItemId();
-        switch (id){
+        int id = item.getItemId();
+        switch (id) {
 
             case R.id.nav_home:
-                Intent h= new Intent(UserHomeActivity.this,UserHomeActivity.class);
+                Intent h = new Intent(UserHomeActivity.this, UserHomeActivity.class);
                 startActivity(h);
                 this.finish();
                 break;
             case R.id.nav_import:
-                Intent i= new Intent(UserHomeActivity.this,AboutAs.class);
+                Intent i = new Intent(UserHomeActivity.this, AboutAs.class);
                 startActivity(i);
                 this.finish();
                 break;
-                   case R.id.nav_gallery:
-                Intent j= new Intent(UserHomeActivity.this,ContactAs.class);
+            case R.id.nav_gallery:
+                Intent j = new Intent(UserHomeActivity.this, ContactAs.class);
                 startActivity(j);
                 this.finish();
                 break;
@@ -164,11 +167,12 @@ public class UserHomeActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    private ArrayList<ImageModel> populateList(){
+
+    private ArrayList<ImageModel> populateList() {
 
         ArrayList<ImageModel> list = new ArrayList<>();
 
-        for(int i = 0; i < 6; i++){
+        for (int i = 0; i < 6; i++) {
             ImageModel imageModel = new ImageModel();
             imageModel.setImage_drawable(myImageList[i]);
             list.add(imageModel);
@@ -179,8 +183,8 @@ public class UserHomeActivity extends AppCompatActivity
 
     private void init() {
 
-        mPager =  findViewById(R.id.pager);
-        mPager.setAdapter(new SlidingImage_Adapter(UserHomeActivity.this,imageModelArrayList));
+        mPager = findViewById(R.id.pager);
+        mPager.setAdapter(new SlidingImage_Adapter(UserHomeActivity.this, imageModelArrayList));
 
         CirclePageIndicator indicator = (CirclePageIndicator)
                 findViewById(R.id.indicator);
@@ -192,7 +196,7 @@ public class UserHomeActivity extends AppCompatActivity
 //Set circle indicator radius
         indicator.setRadius(5 * density);
 
-        NUM_PAGES =imageModelArrayList.size();
+        NUM_PAGES = imageModelArrayList.size();
 
         // Auto start of viewpager
         final Handler handler = new Handler();

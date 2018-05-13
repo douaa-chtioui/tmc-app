@@ -7,10 +7,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.NumberPicker;
 
+import tmc.ensi.org.tmcapp.model.ApplicationModel;
+import tmc.ensi.org.tmcapp.model.Profile;
+
 public class Weight extends AppCompatActivity {
     private NumberPicker weightPicker;
     private Button nextButton , homePageButton ,retutnButton;
-    private int wheight;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,9 +26,14 @@ public class Weight extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Profile profile = ApplicationModel.get().getCurrentUser().getProfile();
+                if(profile == null){
+                    profile = new Profile();
+                    ApplicationModel.get().getCurrentUser().setProfile(profile);
+                }
+                profile.setWeight(weightPicker.getValue());
                 Intent intent = new Intent(getApplicationContext(),Qgender.class);
                 startActivity(intent);
-                wheight = weightPicker.getValue() ;
             }
         });
         homePageButton = findViewById(R.id.btn_home);
@@ -46,7 +54,4 @@ public class Weight extends AppCompatActivity {
         });
     }
 
-    public int getWheight() {
-        return wheight;
-    }
 }

@@ -7,10 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
 
+import tmc.ensi.org.tmcapp.model.ApplicationModel;
+
 public class QHyperTension extends AppCompatActivity {
 
     private Button nextButton , homePageButton ,retutnButton;
-    private boolean hypertensive;
     private RadioGroup hypertensionRadioGroup ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,9 +22,10 @@ public class QHyperTension extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                boolean hypertensive = hypertensionRadioGroup.getCheckedRadioButtonId() == findViewById(R.id.btn_checkhypertension_T).getId();
+                ApplicationModel.get().getCurrentUser().getProfile().setHypertensive(hypertensive);
                 Intent intent = new Intent(getApplicationContext(), QDyslipidemia.class);
                 startActivity(intent);
-                hypertensive = hypertensionRadioGroup.getCheckedRadioButtonId() == findViewById(R.id.btn_checkhypertension_T).getId();
             }
         });
         homePageButton = findViewById(R.id.btn_home);
@@ -44,7 +46,4 @@ public class QHyperTension extends AppCompatActivity {
         });
     }
 
-    public boolean isHypertensive() {
-        return hypertensive;
-    }
 }

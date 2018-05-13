@@ -8,12 +8,13 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import tmc.ensi.org.tmcapp.model.ApplicationModel;
+
 public class QDyslipidemia extends AppCompatActivity {
 
     private Button nextButton , homePageButton ,retutnButton;
     private RadioGroup dyslipidemieRadioGroup;
     private RadioButton checkDyslipidemieButton ,checkNoDyslipidemieButton ;
-    private boolean dyslipidemic ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,9 +26,10 @@ public class QDyslipidemia extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                boolean dyslipidemic = dyslipidemieRadioGroup.getCheckedRadioButtonId() == findViewById(R.id.btn_checkdyslipidemie_T).getId();
+                ApplicationModel.get().getCurrentUser().getProfile().setDyslipidemic(dyslipidemic);
                 Intent intent = new Intent(getApplicationContext(),QFamilyAntecedent.class);
                 startActivity(intent);
-                dyslipidemic = dyslipidemieRadioGroup.getCheckedRadioButtonId() == findViewById(R.id.btn_checkdyslipidemie_T).getId();
             }
         });
         homePageButton = findViewById(R.id.btn_home);
@@ -48,7 +50,4 @@ public class QDyslipidemia extends AppCompatActivity {
         });
     }
 
-    public boolean isDyslipidemic() {
-        return dyslipidemic;
-    }
 }

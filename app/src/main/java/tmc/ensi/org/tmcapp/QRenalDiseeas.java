@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import tmc.ensi.org.tmcapp.model.ApplicationModel;
+
 public class QRenalDiseeas extends AppCompatActivity {
     private RadioButton checkKidneyDiseaseButton ,checkNoKidneyDiseaseButton ;
     private RadioGroup kidneyRadioGroup;
