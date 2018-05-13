@@ -13,6 +13,7 @@ public class User {
     private int age;
     private Profile profile;
     private boolean hasDoctor;
+    private boolean patient;
     private ChronicDisease chronicDisease;
 
     public User() {
@@ -70,4 +71,11 @@ public class User {
 
     public void setChronicDisease(ChronicDisease chronicDisease) { this.chronicDisease = chronicDisease; }
 
+    public boolean isPatient() {
+        return patient;
+    }
+
+    public void setPatient(boolean patient) {
+        this.patient = patient;
+    }
 }

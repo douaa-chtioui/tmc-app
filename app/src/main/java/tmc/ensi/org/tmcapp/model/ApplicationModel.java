@@ -17,8 +17,8 @@ import retrofit2.http.Query;
 public class ApplicationModel {
 
     private static final Retrofit retrofit = new Retrofit.Builder()
-//            .baseUrl("http://192.168.0.10:8080/")
-            .baseUrl("http://192.168.1.102:8080/")
+            .baseUrl("http://192.168.0.10:8080/")
+//            .baseUrl("http://192.168.1.102:8080/")
             .addConverterFactory(JacksonConverterFactory.create())
             .build();
 
@@ -57,6 +57,14 @@ public class ApplicationModel {
         return updated;
     }
 
+    public boolean updateCurrentChronicDisease(ChronicDisease chronicDisease) throws IOException {
+        boolean updated = API.updatePatientChronicDisease(currentUser.getIdentifier(), chronicDisease).execute().isSuccessful();
+        if (updated) {
+            this.currentUser.setChronicDisease(chronicDisease);
+        }
+        return updated;
+    }
+
     public UserNotification fetchNotification() {
         try {
             return API.fetchNotification(this.currentUser.getIdentifier()).execute().body();
@@ -86,14 +94,16 @@ public class ApplicationModel {
         Call<User> login(@Body UserCredential credential);
 
         @PUT("patients/{patientId}/profile")
-        Call<User> updatePatientProfile(@Path("patientId") long patientId, @Body Profile profile);
+        Call<Void> updatePatientProfile(@Path("patientId") long patientId, @Body Profile profile);
 
         @PUT("patients/{patientId}/doctor")
-        Call<User> assignDoctor(@Path("patientId") long patientId, @Body DoctorAssignment doctorAssignment);
+        Call<Void> assignDoctor(@Path("patientId") long patientId, @Body DoctorAssignment doctorAssignment);
 
         @GET("notifications")
         Call<UserNotification> fetchNotification(@Query("patientId") long patientId);
 
+        @PUT("patients/{patientId}/chronic-disease")
+        Call<Void> updatePatientChronicDisease(long identifier, @Body ChronicDisease chronicDisease);
     }
 
 }
