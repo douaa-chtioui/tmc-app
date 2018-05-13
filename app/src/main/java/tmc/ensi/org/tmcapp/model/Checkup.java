@@ -3,7 +3,10 @@ package tmc.ensi.org.tmcapp.model;
 import java.util.Date;
 
 public class Checkup {
-    private Date date ;
+
+    private long identifier;
+    private String patientFullName;
+    private Date checkupDate;
     private String patientComment;
     private String doctorComment;
 
@@ -11,12 +14,28 @@ public class Checkup {
 
     }
 
-    public Date getDate() {
-        return date;
+    public long getIdentifier() {
+        return identifier;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setIdentifier(long identifier) {
+        this.identifier = identifier;
+    }
+
+    public String getPatientFullName() {
+        return patientFullName;
+    }
+
+    public void setPatientFullName(String patientFullName) {
+        this.patientFullName = patientFullName;
+    }
+
+    public Date getCheckupDate() {
+        return checkupDate;
+    }
+
+    public void setCheckupDate(Date checkupDate) {
+        this.checkupDate = checkupDate;
     }
 
     public String getPatientComment() {
@@ -34,4 +53,5 @@ public class Checkup {
     public void setDoctorComment(String doctorComment) {
         this.doctorComment = doctorComment;
     }
+
 }

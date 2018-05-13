@@ -3,12 +3,11 @@ package tmc.ensi.org.tmcapp;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -35,6 +34,7 @@ public class CoronaryPathologyActivity extends AppCompatActivity {
                 boolean stentsPos = stentsPosRGroup.getCheckedRadioButtonId() == findViewById(R.id.rb_checkStentsPos).getId();
                 boolean aeroCoronary = aeroCoronaryRGroup.getCheckedRadioButtonId() == findViewById(R.id.rb_checkAeroCoronary).getId();
                 ChronicDisease chronicDisease = new ChronicDisease();
+                chronicDisease.setDisease(Disease.CoronaryPathology);
                 chronicDisease.setStentsPose(stentsPos);
                 chronicDisease.setAortoCoronaryBypass(aeroCoronary);
                 ApplicationModel.get().getCurrentUser().setChronicDisease(chronicDisease);

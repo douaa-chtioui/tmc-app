@@ -2,6 +2,8 @@ package tmc.ensi.org.tmcapp.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.util.List;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User {
 
@@ -15,6 +17,7 @@ public class User {
     private boolean hasDoctor;
     private boolean patient;
     private ChronicDisease chronicDisease;
+    private List<Checkup> checkups;
 
     public User() {
     }
@@ -55,7 +58,9 @@ public class User {
         return profile;
     }
 
-    public ChronicDisease getChronicDisease() { return chronicDisease; }
+    public ChronicDisease getChronicDisease() {
+        return chronicDisease;
+    }
 
     public void setProfile(Profile profile) {
         this.profile = profile;
@@ -65,11 +70,13 @@ public class User {
         return this.hasDoctor;
     }
 
-    public void setHasDoctor(boolean hasDoctor){
+    public void setHasDoctor(boolean hasDoctor) {
         this.hasDoctor = hasDoctor;
     }
 
-    public void setChronicDisease(ChronicDisease chronicDisease) { this.chronicDisease = chronicDisease; }
+    public void setChronicDisease(ChronicDisease chronicDisease) {
+        this.chronicDisease = chronicDisease;
+    }
 
     public boolean isPatient() {
         return patient;
@@ -77,5 +84,13 @@ public class User {
 
     public void setPatient(boolean patient) {
         this.patient = patient;
+    }
+
+    public List<Checkup> getCheckups() {
+        return checkups;
+    }
+
+    public void setCheckups(List<Checkup> checkups) {
+        this.checkups = checkups;
     }
 }

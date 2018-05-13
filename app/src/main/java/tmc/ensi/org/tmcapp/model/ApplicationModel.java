@@ -3,6 +3,8 @@ package tmc.ensi.org.tmcapp.model;
 import android.util.Log;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Retrofit;
@@ -17,8 +19,8 @@ import retrofit2.http.Query;
 public class ApplicationModel {
 
     private static final Retrofit retrofit = new Retrofit.Builder()
-//            .baseUrl("http://192.168.0.10:8080/")
-            .baseUrl("http://192.168.1.102:8080/")
+            .baseUrl("http://192.168.0.10:8080/")
+//            .baseUrl("http://192.168.1.102:8080/")
             .addConverterFactory(JacksonConverterFactory.create())
             .build();
 
@@ -50,7 +52,7 @@ public class ApplicationModel {
     }
 
     public boolean updateCurrentUserProfile() throws IOException {
-        return API.updatePatientProfile(currentUser.getIdentifier(),currentUser.getProfile()).execute().isSuccessful();
+        return API.updatePatientProfile(currentUser.getIdentifier(), currentUser.getProfile()).execute().isSuccessful();
     }
 
     public boolean updateCurrentChronicDisease() throws IOException {
@@ -77,6 +79,14 @@ public class ApplicationModel {
         }
     }
 
+    public boolean createCheckup(Checkup checkup) throws IOException {
+        boolean successful = API.createCheckup(this.currentUser.getIdentifier(), checkup).execute().isSuccessful();
+        if (successful) {
+            this.currentUser.getCheckups().add(checkup);
+        }
+        return successful;
+    }
+
     private interface Api {
 
         @POST("patients")
@@ -95,7 +105,11 @@ public class ApplicationModel {
         Call<UserNotification> fetchNotification(@Query("patientId") long patientId);
 
         @PUT("patients/{patientId}/chronic-disease")
-        Call<Void> updatePatientChronicDisease(long identifier, @Body ChronicDisease chronicDisease);
+        Call<Void> updatePatientChronicDisease(@Path("patientId") long identifier, @Body ChronicDisease chronicDisease);
+
+        @POST("patients/{patientId}/checkups")
+        Call<Void> createCheckup(@Path("patientId") long patientId, @Body Checkup checkup);
+
     }
 
 }
