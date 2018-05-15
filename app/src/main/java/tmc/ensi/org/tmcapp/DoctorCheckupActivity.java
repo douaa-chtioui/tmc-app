@@ -27,12 +27,12 @@ public class DoctorCheckupActivity extends AppCompatActivity {
         btnAdd = findViewById(R.id.btnAdd);
         final ArrayList<Checkup> checkups = new ArrayList<>();
         Checkup c1 = new Checkup();
-        c1.setDate(new Date());
+        c1.setCheckupDate(new Date());
         c1.setPatientComment("Question");
         c1.setDoctorComment("Response");
         checkups.add(c1);
         Checkup c2 = new Checkup();
-        c2.setDate(new Date());
+        c2.setCheckupDate(new Date());
         c2.setPatientComment("Question");
         checkups.add(c2);
         CheckupAdapter checkupAdapter = new CheckupAdapter(this, R.layout.item_checkup_form, checkups);

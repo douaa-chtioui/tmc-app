@@ -86,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void onLoginSuccess() {
         if (ApplicationModel.get().getCurrentUser().isPatient()){
-        Intent intent = new Intent(getApplicationContext(), DoctorHomeActivity.class);
+        Intent intent = new Intent(getApplicationContext(), UserHomeActivity.class);
         startActivity(intent);
         finish(); } else {
             Intent intent = new Intent(getApplicationContext(), DoctorHomeActivity.class);

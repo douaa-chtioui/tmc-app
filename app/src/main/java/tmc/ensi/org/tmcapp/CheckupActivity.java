@@ -18,12 +18,22 @@ import tmc.ensi.org.tmcapp.model.Checkup;
 public class CheckupActivity extends AppCompatActivity {
     ListView formList ;
     Button btnAdd ;
+    Button homePageButton ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkup);
         formList = (ListView) findViewById(R.id.formList);
         btnAdd = findViewById(R.id.btnAdd);
+        homePageButton = findViewById(R.id.btn_home);
+        homePageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),UserHomeActivity.class);
+                startActivity(intent);
+                finishAffinity();
+            }
+        });
 
         CheckupAdapter checkupAdapter = new CheckupAdapter(this, R.layout.item_checkup_form, ApplicationModel.get().getCurrentUser().getCheckups());
         formList.setAdapter(checkupAdapter);

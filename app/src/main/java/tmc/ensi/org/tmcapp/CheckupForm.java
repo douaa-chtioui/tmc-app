@@ -39,7 +39,7 @@ public class CheckupForm extends AppCompatActivity {
     }
 
     public void onCreateCheckupSuccess() {
-        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+        Intent intent = new Intent(getApplicationContext(), CheckupActivity.class);
         startActivity(intent);
         finish();
     }

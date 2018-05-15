@@ -32,7 +32,7 @@ public class Weight extends AppCompatActivity {
                     ApplicationModel.get().getCurrentUser().setProfile(profile);
                 }
                 profile.setWeight(weightPicker.getValue());
-                Intent intent = new Intent(getApplicationContext(),Qgender.class);
+                Intent intent = new Intent(getApplicationContext(),Height.class);
                 startActivity(intent);
             }
         });

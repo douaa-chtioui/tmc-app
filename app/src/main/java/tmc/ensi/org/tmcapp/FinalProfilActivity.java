@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,6 +26,13 @@ public class FinalProfilActivity extends AppCompatActivity {
     private TextView chronicDisease ;
     private TextView name ;
     private TextView chronicDiseasetv ;
+    private TextView chronicDiseaseType ;
+    private TextView chronicDiseaseS1 ;
+    private TextView chronicDiseaseS2 ;
+    private TextView chronicDiseaseS3 ;
+    private TextView chronicDiseaseS4 ;
+    private Button homePageButton ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +41,9 @@ public class FinalProfilActivity extends AppCompatActivity {
         menopause = findViewById(R.id.tv_menopaue);
         height = findViewById(R.id.tv_height);
         chronicDiseasetv = findViewById(R.id.tv_chronicDisease);
+        chronicDiseaseType = findViewById(R.id.tv_chronicDiseaseType);
+        chronicDiseaseS1 = findViewById(R.id.tv_chronicDiseaseS1);
+        chronicDiseaseS2 = findViewById(R.id.tv_chronicDiseaseS2);
         weight = findViewById(R.id.tv_weight);
         diabetes = findViewById(R.id.tv_diabete);
         dyslipidemia = findViewById(R.id.tv_dyslipidimic);
@@ -40,6 +51,15 @@ public class FinalProfilActivity extends AppCompatActivity {
         personnelAntecedent = findViewById(R.id.tv_personnelAntecedent);
         familyAntecedent = findViewById(R.id.tv_familyAntecedent);
         name = findViewById(R.id.tv_name);
+        homePageButton = findViewById(R.id.btn_home);
+        homePageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),UserHomeActivity.class);
+                startActivity(intent);
+                finishAffinity();
+            }
+        });
         ImageView img = (ImageView) findViewById(R.id.im_modifyProfil);
         img.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -95,7 +115,7 @@ public class FinalProfilActivity extends AppCompatActivity {
             }
             height.setText(String.valueOf(profile.getHeight()));
             weight.setText(String.valueOf(profile.getWeight()));
-            name.setText(ApplicationModel.get().getCurrentUser().getFirstname()+ " " + ApplicationModel.get().getCurrentUser().getFirstname());
+            name.setText(ApplicationModel.get().getCurrentUser().getFirstname()+ " " + ApplicationModel.get().getCurrentUser().getLastname());
             if (profile.isDiabetic()) {
                 diabetes.setText("Diabétique");
             } else {
@@ -108,8 +128,23 @@ public class FinalProfilActivity extends AppCompatActivity {
             }
             if (ApplicationModel.get().getCurrentUser().getChronicDisease() != null)
             {
-                chronicDiseasetv.setText("Avec des maladies chroniques");
+                chronicDiseasetv.setText("Maladies chroniques: ");
+                if (ApplicationModel.get().getCurrentUser().getChronicDisease().isAortoCoronaryBypass())
+                {
+                    chronicDiseaseType.setText("Pathologie des coronaires");
+                    chronicDiseaseType.setTextSize(20);
+                    chronicDiseaseS1.setText("A eu un pontage aorto-coronaire");
+                    chronicDiseaseS1.setTextSize(20);
+                }else if (ApplicationModel.get().getCurrentUser().getChronicDisease().isStentsPose()){
+                    chronicDiseaseType.setText("Pathologie des coronaires");
+                    chronicDiseaseType.setTextSize(20);
+                    chronicDiseaseS1.setText("A eu un pontage aorto-coronaire");
+                    chronicDiseaseS1.setTextSize(20);
+                }
+            }else{
+                chronicDiseasetv.setText("Sans maladies chroniques: ");
             }
+
         }
 
     }

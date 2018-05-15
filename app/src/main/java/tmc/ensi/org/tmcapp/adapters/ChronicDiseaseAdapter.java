@@ -49,10 +49,8 @@ public class ChronicDiseaseAdapter  extends BaseAdapter {
             view = view.inflate(context, R.layout.chronic_disease_list_design, null);
         }
 
-        ImageView imageView = (ImageView) view.findViewById(R.id.chronicDiseaseImage);
         TextView textView = (TextView) view.findViewById(R.id.chronicDiseaseText);
 
-        imageView.setImageResource(idImages.get(i));
         textView.setText(textViewList.get(i));
 
         return view;

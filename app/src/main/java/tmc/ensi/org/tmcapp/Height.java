@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.NumberPicker;
 
+import tmc.ensi.org.tmcapp.model.ApplicationModel;
+
 public class Height extends AppCompatActivity{
     private NumberPicker heightPicker;
     private Button homePageButton , nextButton ,retutnButton ;
@@ -32,7 +34,8 @@ public class Height extends AppCompatActivity{
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),Weight.class);
+                ApplicationModel.get().getCurrentUser().getProfile().setHeight(heightPicker.getValue());
+                Intent intent = new Intent(getApplicationContext(),Qgender.class);
                 startActivity(intent);
                 height = heightPicker.getValue();
             }

@@ -39,7 +39,7 @@ public class DoctorCodeActivity extends AppCompatActivity {
     }
 
     public void onAssignDoctorSuccess() {
-        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+        Intent intent = new Intent(getApplicationContext(), CheckupActivity.class);
         startActivity(intent);
         finish();
     }
