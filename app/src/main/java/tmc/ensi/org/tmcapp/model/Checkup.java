@@ -9,6 +9,7 @@ public class Checkup {
     private Date checkupDate;
     private String patientComment;
     private String doctorComment;
+    private Profile patientProfile;
 
     public Checkup() {
 
@@ -54,4 +55,11 @@ public class Checkup {
         this.doctorComment = doctorComment;
     }
 
+    public Profile getPatientProfile() {
+        return patientProfile;
+    }
+
+    public void setPatientProfile(Profile patientProfile) {
+        this.patientProfile = patientProfile;
+    }
 }
