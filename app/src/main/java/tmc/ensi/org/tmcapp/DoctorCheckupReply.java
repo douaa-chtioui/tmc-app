@@ -25,7 +25,7 @@ public class DoctorCheckupReply extends AppCompatActivity {
     private Button sendbtn;
     private long identifier;
     EditText doctorCommentText;
-    Comment comment = new Comment();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,12 +36,10 @@ public class DoctorCheckupReply extends AppCompatActivity {
         question.setText(quest);
         doctorCommentText = findViewById(R.id.et_doctorReply);
         sendbtn = findViewById(R.id.btn_send);
-        comment.setValue(doctorCommentText.getText().toString());
         sendbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                new UpdateCheckupAsyncTask(DoctorCheckupReply.this).execute(identifier,comment);
+                new UpdateCheckupAsyncTask(DoctorCheckupReply.this).execute(identifier, doctorCommentText.getText().toString());
             }
         });
 
@@ -79,7 +77,7 @@ public class DoctorCheckupReply extends AppCompatActivity {
         @Override
         protected Void doInBackground(Object... params) {
             try {
-                success = ApplicationModel.get().updateCheckup((long)params[0], (Comment) params[1]);
+                success = ApplicationModel.get().updateCheckup((long) params[0], new Comment((String) params[1]));
             } catch (Exception e) {
                 Log.e(ProfileActivity.class.getSimpleName(), ProfileActivity.class.getSimpleName(), e);
             }
