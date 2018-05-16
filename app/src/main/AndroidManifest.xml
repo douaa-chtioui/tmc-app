@@ -88,7 +88,8 @@
         <activity android:name=".DoctorCheckupActivity" />
         <activity android:name=".QChronicdisease" />
         <activity android:name=".DoctorCheckupDetailsActivity" />
-        <activity android:name=".DoctorCheckupReply"></activity>
+        <activity android:name=".DoctorCheckupReply" />
+        <activity android:name=".RiskResult"></activity>
     </application>
 
 </manifest>

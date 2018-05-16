@@ -36,6 +36,7 @@ public class DoctorCheckupActivity extends AppCompatActivity {
                 if (checkups.get(position).getDoctorComment() == null) {
                     Intent intent = new Intent(DoctorCheckupActivity.this, DoctorCheckupReply.class);
                     intent.putExtra("question", checkups.get(position).getPatientComment());
+                    intent.putExtra("identifier", checkups.get(position).getIdentifier());
                     startActivity(intent);
                 } else {
                     Intent intent = new Intent(DoctorCheckupActivity.this, DoctorCheckupDetailsActivity.class);

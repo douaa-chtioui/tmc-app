@@ -19,8 +19,9 @@ import retrofit2.http.Query;
 public class ApplicationModel {
 
     private static final Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://192.168.0.10:8080/")
-//            .baseUrl("http://192.168.43.209:8080/")
+
+//            .baseUrl("http://192.168.0.10:8080/")
+            .baseUrl("http://192.168.1.102:8080/")
             .addConverterFactory(JacksonConverterFactory.create())
             .build();
 
@@ -86,9 +87,19 @@ public class ApplicationModel {
         }
         return successful;
     }
+
     public boolean updateCheckup(long checkupId, Comment comment) throws IOException {
-        return API.updateCheckup(checkupId, comment).execute().isSuccessful();
+        boolean successful = API.updateCheckup(checkupId, comment).execute().isSuccessful();
+        if (successful) {
+            for (Checkup checkup : this.currentUser.getCheckups()) {
+                if (checkup.getIdentifier() == checkupId) {
+                    checkup.setDoctorComment(comment.getValue());
+                }
+            }
+        }
+        return successful;
     }
+
     private interface Api {
 
         @POST("patients")
